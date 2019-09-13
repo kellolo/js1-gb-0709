@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Niyaz Niyazov - Урок 2</title>
+</head>
+<body>
+    <script>
+    runningTitle()
+    console.log(' 1. Почему код дает именно такие результаты? \n\nvar a = 1, b = 1, c, d;' + 
+    '\nc = ++a; alert(c);   // 2' + '\nd = b++; alert(d);    // 1' + '\nc = (2+ ++a); alert(c);  // 5' + 
+    '\nd = (2+ b++); alert(d);  // 4' + '\nalert(a);    // 3' + '\nalert(b);    // 3')
+    
+    console.log(' Ответ: \n' + 
+    '\n# ++a префиксная форма, поэтому сначала а увеличивается на 1 и присваивается с, поэтому алертится 2' + 
+    '\n# b++ постфиксная форма, поэтому сначала присваивается последнее значение b, это 1, в дальнейшем b будет 2 ' + 
+    '\n# ++a префиксная форма, поэтому сначала а увеличивается на 1 и будет иметь значение 3, потом простое арифметическое действие 2+3=5 и это присваивается с, поэтому алертится 5' + 
+    '\n# b++ постфиксная форма, поэтому сначала присваивается последнее значение b, это 2, потом простое арифметическое действие 2+2=4 и это присваивается d, в дальнейшем b будет 3 ' + 
+    '\n# в 3-ем примере а стала 3, поэтому алертится 3' + 
+    '\n# в 4-ом примере b стала 3, поэтому алертится 3'  )
+
+    runningTitle()
+
+    console.log('2. Чему будет равен x? \n\nvar a = 2;\nvar x = 1 + (a *= 2);')
+    console.log(' Ответ: \n' + 
+    '\n# х будет равен 5и потому, что a *= 2 умножает последнее значение а на 2, получится 4, 1+4=5 и это присваивается х'  )
+    
+    runningTitle()
+
+    console.log('3. Разность, произведение, сумма')
+    console.log(' Ответ: \n')
+
+    let a = 19
+    let b = 88
+    if (a >= 0 && b >= 0 ){
+        console.log('оба положительные, их разность ' + (a - b))
+    }
+
+    if( a < 0 && b < 0 ){
+        console.log('оба отрицательные, их произведение ' + (a * b))
+    }
+
+    if( a * b < 0 ){
+        console.log('а и b разных знаков, их сумма ' + (a + b))
+    }
+    
+    runningTitle()
+
+    console.log('4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.')
+    console.log('Ответ: \n Времени на это тратить не стал!')
+
+    runningTitle()
+
+    console.log('5. Реализовать четыре основные арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.')
+    console.log('Ответ: \n')
+
+            a = 15;
+			b = 9;
+
+			
+
+			function division(a, b) {
+			    if (b != 0){
+			    	return "a / b = " + (a / b);
+			    	} else {
+			     
+			    return "На ноль делить нельзя! Введите другое число.";
+			}
+
+			}
+
+			function addition(a, b) {
+			    return "a + b = " + (a + b);
+			}
+
+			function subtraction(a, b) {
+			    return "a - b = " + (a - b);
+			}
+
+			function multiplication(a, b) {
+			    return "a * b = " + (a * b);
+			    }
+			console.log("a = " + a + "\nb = " + b);
+			console.log("_____________________________________________");
+			console.log(division(a, b));
+			console.log(addition(a, b));
+			console.log(subtraction(a, b));
+			console.log(multiplication(a, b));
+
+            runningTitle()
+
+            console.log('6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation).')
+            console.log('Ответ: \n')
+
+
+            console.log("Введите arg1, arg2 и operation ( + - * / )");
+			repeatOperation();
+			function repeatOperation(){
+
+				let arg1 = 92;
+				let operation = "-";
+				let arg2 = 37;
+				
+				if(isNaN(arg1) || isNaN(arg2)){
+					console.log("Оба аргументы arg1 и arg1 должны быть типа 'number' ");
+					repeatOperation();
+				} 
+				let result = mathOperation(arg1, arg2, operation);
+				
+				function mathOperation(arg1, arg2, operation){
+					
+					
+					switch(operation){
+
+						case "+":
+							
+							return addition(arg1, arg2);
+							
+							break;
+						case "/":
+							
+							return division(arg1, arg2);
+							
+							break;
+						case "-":
+							
+							return subtraction(arg1, arg2);
+							
+							break;
+						case "*":
+							
+							return multiplication(arg1, arg2);
+							
+							break;
+
+						default:
+							return "Похоже operation введено не правильно. operation должен быть один из: \n + - * /";
+							
+							
+					}
+				}
+			
+				function division(arg1, arg2) {
+				    if (arg2!=0){
+				    	return `${arg1} / ${arg2} = ` + (arg1 / arg2);
+				    	} else {
+				     
+				    return "На ноль делить нельзя! Введите другое число.";
+				}
+
+				}
+
+				function addition(arg1, arg2) {
+				    return `${arg1} + ${arg2} = ` + (arg1 + arg2);;
+				}
+
+				function subtraction(arg1, arg2) {
+				    return `${arg1} - ${arg2} = ` + (arg1 - arg2);
+				}
+
+				function multiplication(arg1, arg2) {
+				    return `${arg1} * ${arg2} = ` + (arg1 * arg2);
+				    }
+
+				if(!isNaN(arg1) || !isNaN(arg2)){
+					console.log("_____________________________________________");
+					console.log(`arg1 = ${arg1} \narg2 = ${arg2} \noperation = " ${operation} "`);
+					
+					console.log(result);
+				
+				
+				}
+					
+			}	
+			runningTitle()
+
+            console.log('7*. Сравнить null и 0. Объяснить результат.')
+            console.log('Ответ: \n' + 'null это пустота, а 0 цифра, их сравнивать неправильно, null не больше, не меньше и не равно 0, поэтому результат всегда будет false' )		
+
+
+            function runningTitle(){
+                let runningTitleStr ="#"
+                for (let index = 0; index < 50; index++) {
+                    runningTitleStr +=" #" 
+        }
+                console.log(runningTitleStr)  }
+    
+    </script>
+</body>
+</html>
