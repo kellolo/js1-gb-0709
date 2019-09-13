@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // exercise 1
+        var a = 1, b = 1, c, d;
+        c = ++a; console.log("++a return 2, a = 2, c = ", c);
+        d = b++; console.log("b++ return 1, b = 2, d = ", d);             
+        c = (2+ ++a); console.log("++a return 3, a = 3, 2 + 3, c =", c);       
+        d = (2+ b++); console.log("b++ return 2, b = 3, 2 + 2, d =", d);     
+        console.log(a);                   
+        console.log(b);                    
+    </script>  
+    <script>
+        // exercise 2
+        var a = 2;
+        var x = 1 + (a *= 2);
+        console.log("first estimation a *= 2 returns 4, second calculate 1 + 4 returns 5, x = ", x);
+    </script> 
+    <script>
+        // exercise 3
+         var a = -3, b = 4, c;
+         if(a >= 0 && b >= 0){
+            c = a - b;
+            console.log("first branch, result ", c);
+         } else if(a < 0 && b < 0) {
+            c = a * b;
+            console.log("second branch, result ", c);
+         } else {
+            c = a + b;
+            console.log("third branch, result ", c);
+         }
+              
+    </script>
+    <script>
+        // exercise 4
+        var a = Math.floor(Math.random() * (15 - 0 + 1));
+        switch(a){
+            case 15:
+                console.log(a);
+                break;
+            default:
+                while (a <= 15){
+                    console.log(a++);   
+                }
+        }
+    </script> 
+    <script>
+        // exercise 5
+        function sum(a, b){
+            return (a+b);
+        }
+        function sub(a, b){
+            return (a-b);
+        }
+        function mult(a, b){
+            return (a*b);
+        }
+        function div(a, b){
+            return (a/b);
+        }
+    </script>
+    <script>
+        // exercise 6
+        function mathOperation(arg1, arg2, operation){
+            switch(operation){
+                case "+":
+                    console.log(sum(arg1, arg2));
+                    break;
+                case "-":
+                    console.log(sub(arg1, arg2));
+                    break; 
+                case "*":
+                    console.log(mult(arg1, arg2));
+                    break;
+                case "/":
+                    console.log(div(arg1, arg2));
+                    break;
+            }
+        }
+    </script>
+    <script>
+        // exercise 7
+        console.log(null == 0);
+        // 'null' - отсутствие объектного значения 
+    </script>
+    <script>
+        // exercise 8
+        function power(val, pow){
+            if (val == 0){
+                return(0);
+            } else {
+                switch(pow){
+                case 0:
+                    return(1);
+                    break;
+                case 1:
+                    return(val);
+                    break;
+                case 2:
+                    val = val * val;
+                    return(val);
+                    break;    
+                default:
+                    var res = val;
+                    while(pow > 2){
+                        res *= val;
+                        --pow;
+                        power(val, pow);  
+                    }
+                    res *= val;
+                    return (res);
+                    break;
+                }
+            }
+        }
+    </script>        
+</body>
+</html>
