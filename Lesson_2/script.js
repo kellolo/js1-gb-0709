@@ -13,54 +13,95 @@ if(a >= 0 && b >= 0) {
 
 // 2 задание
 
-let num = +prompt("Введите число в промежутке от 1 - 5");
+a = +prompt("Введите чиcло от 0 до 15:");
+        var sum = "";
+        switch (a) {
+            case 0:
+                console.log (a++)
+            case 1:
+                console.log (a++)
+            case 2:
+                console.log (a++)
+            case 3:
+                sum += a++ + " ";
+            case 4:
+                sum += a++ + " ";
+            case 5:
+                sum += a++ + " ";
+            case 6:
+                sum += a++ + " ";
+            case 7:
+                sum += a++ + " ";
+            case 8:
+                sum += a++ + " ";
+            case 9:
+                sum += a++ + " ";
+            case 10:
+                sum += a++ + " ";
+            case 11:
+                sum += a++ + " ";
+            case 12:
+                sum += a++ + " ";
+            case 13:
+                sum += a++ + " ";
+            case 14:
+                sum += a++ + " ";
+            case 15:
+                sum += a++ + " ";
+                break;
+            default:
+                console.log("Пожалуйста, проверьте правильность ввода данных и повторите попытку!");
+        }
+        console.log(sum);
 
-switch(num) {
-   case 1: 
-     console.log("Число = " + num);
-     break;
-   case 2: 
-     console.log("Число = " + num);
-     break;
-   case 3: 
-     console.log("Число = " + num);
-     break;
-   case 4: 
-     console.log("Число = " + num);
-     break;
-   case 5: 
-     console.log("Число = " + num);
-     break;
-   default:
-     console.log("Повторите");
- }
+ // 3 задание
 
- // 3 и 4 задания
+        function add(x, y) {
+            return x + y;
+        }
+        function sub(x, y) {
+            return x - y;
+        }
+        function mult(x, y) {
+            return x * y;
+        }
+        function div(x, y) {
+            return x / y;
+        }
 
- function mathOperation(arg1, arg2, operation) {
-    arg1 = +prompt("Введите первое число");
-    arg2 = +prompt("Введите второе число");
-    operation = prompt("Введите операцию");
-    switch(operation) {
-        case "-": 
-        return arg1 - arg2;
-        break;
-        case "+": 
-        return arg1 + arg2;
-        break;
-        case "*": 
-        return arg1 * arg2;
-        break;
-        case "/": 
-        return arg1 / arg2;
-        break;
-    
-        default: 
-        console.log("Повторите");
-   }
- }
-    
- console.log(mathOperation());
+  // 4 задание
+
+function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+        case "+":
+            return add(arg1, arg2);
+        case "-":
+            return sub(arg1, arg2);
+        case "*":
+            return mult(arg1, arg2);
+        case "/":
+            return div(arg1, arg2);
+        default:
+            return "Пожалуйста, проверьте правильность ввода данных и повторите попытку!";
+    }
+}
+var arg1 = +prompt("Введите число:");
+var arg2 = +prompt("Введите число:");
+var operation = prompt('Введите необходимую операцию "+", "-", "*", "/"');
+console.log(mathOperation(arg1, arg2, operation));
+
+ // 5 задание
+
+ var val = +prompt("Введите число");
+        var pow = +prompt("Введите степень для возведения:");
+        function power(val, pow) { //(2, 3)
+          if (pow == 0)
+            return 1;
+          else
+            return val * power(val, pow - 1); 
+        }
+
+  console.log(power(val, pow));
 
 
 
