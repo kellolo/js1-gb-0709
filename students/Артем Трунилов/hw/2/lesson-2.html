@@ -47,13 +47,13 @@
 
         switch (a) {
             case 0:
-                sum += a++ + " ";
+                console.log (a++)
             case 1:
-                sum += a++ + " ";
+                console.log (a++)//2
             case 2:
-                sum += a++ + " ";
+                console.log (a++)//3
             case 3:
-                sum += a++ + " ";
+                sum += a++ + " ";//4
             case 4:
                 sum += a++ + " ";
             case 5:
@@ -107,8 +107,9 @@
             return x / y;
         }
 
-        console.log("Результат сложения = " + add(10, 10));
-        console.log("Результат вычитания = " + sub(10, 10));
+        //console.log("Результат сложения = " + add(10, 10));
+        console.log(`Результат сложения = ${add(10, 10)};`); //${js}
+        console.log("Результат вычитания = " + sub(10, 10) + ";");
         console.log("Результат умножения = " + mult(10, 10));
         console.log("Результат деления = " + div(10, 10));
 
@@ -153,11 +154,11 @@
         var val = +prompt("Введите число");
         var pow = +prompt("Введите степень для возведения:");
 
-        function power(val, pow) {
+        function power(val, pow) { //(2, 3)
             if (pow == 0)
                 return 1;
             else
-                return val * power(val, pow - 1);
+                return val * power(val, pow - 1); 
         }
 
         console.log(power(val, pow));

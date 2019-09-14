@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //LOOPS (Циклы)
+        
+        // 1 - циклы с предусловием
+        // 2 - циклы с постусловием
+
+        // let a = +prompt ()
+        // for  (let i = a; i <= 15; i++) {
+        //     console.log (i)
+        // }
+
+        // let a = +prompt ()
+        // let log = true
+        // let log2 = false
+        // let limit = 15
+        // while (log <= 15) {
+        //     console.log (log)
+        //     log++
+        // }
+
+        // function test (par, lim) {
+        //     return par <= lim ? true : false
+        // }
+
+        // while (log || log2) {
+        //     console.log (a) //самое неважное
+        //     log = test (a, limit)
+        //     a++
+        // }
+
+
+        // let a = 100
+
+        // while (a <= 99.9) {
+        //     alert ('ok')
+        // }
+
+        // do {
+        //     alert ('ok')
+        // } while (a <= 99.999)
+
+        // ARRAYS
+
+        let arr = [1, 'tralala', function () {console.log ('hi from array')}, [11, 22, 33]]
+        //способы сортировки массивов 
+
+
+         let arr2 = []
+        for  (let i = 0; i <= 15; i++) {
+            arr2.push (i)
+            //arr2.unshift (i)
+        }
+
+        //arr2 == [0..15]
+
+        // for (let i = 0; i < arr2.length; i++) {
+        //     console.log (`В массиве на ${i} месте лежит ${arr2[i]}`)
+        // }
+
+        // .forEach (callBackFunction ()) - он пробегается по массиву и к каждому эл-ту применяет callBackFunction
+
+        // arr2.forEach (function (el, i) {
+        //     console.log (`В массиве на ${i} месте лежит ${el}`)
+        // })
+
+        // .find () - поиск в массиве конкр эл
+        // .indexOf () - поиск номера у конкретного значения среди элем массива
+
+        //Elegant mode activated
+        // let arrFiltered = arr2.filter (function (el) {return el > 5})
+        // let arrFilteredArrow = arr2.filter ((el) => el > 5)
+
+        //.forEach loop (for (...of))
+
+        // for (let el of arr2) {
+        //     console.log (`${el} from array`)
+        // }
+    </script>
+</body>
+</html>
