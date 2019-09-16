@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Niyaz Niyazov - Урок 3</title>
+</head>
+<body>
+    <script>
+    runningTitle()
+    console.log(' 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.')
+    console.log(' Решение: \n')
+    let num = 2
+    let limit = 100
+    divisors = [2, 3, 5, 7]
+    divisors.forEach (function (el) {
+        console.log (el)
+    })
+    
+    while(num < limit){
+        if(numberIsPrime(num)){
+            console.log(num)
+        }
+        num++;
+    }
+
+    function numberIsPrime(current_number){
+		        let check_number = 0
+		        divisors.forEach (function (el) {
+		        	if ((current_number % el) === 0){
+		        		check_number++
+		        	}
+		        }) 
+		        return check_number === 0;
+		    }
+
+    runningTitle()
+
+    console.log('4.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. ')
+    console.log(' Решение: \n')
+	for (let i = 0; i <= 9; console.log(i), i++ ) {
+					/* пусто */
+				}
+
+    runningTitle()
+
+    console.log('5. *Нарисовать пирамиду с помощью console.log.')
+    console.log(' Решение: \n')
+	let star="*"
+	for(let i = 0; i < 20; i++){
+		console.log(star)
+		star += "*"
+				}
+
+    runningTitle()
+
+
+            function runningTitle(){
+                let runningTitleStr ="#"
+                for (let index = 0; index < 50; index++) {
+                    runningTitleStr +=" #" 
+        }
+                console.log(runningTitleStr)  }
+    
+    </script>
+</body>
+</html>
