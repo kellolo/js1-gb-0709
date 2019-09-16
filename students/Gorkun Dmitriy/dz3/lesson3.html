@@ -17,11 +17,28 @@
             return true
         }
         var number = 2
+        var arr = []
         while (number <= 100) {
-            if (isSimple(number)) console.log(number)
+            if (isSimple(number)) arr.push(number)
             number++
         }
-
+        console.log(`Задача 1. Массив простых чисел от 1 до 100: ${arr}`)
+        
+        
+        //задание 4.1 
+        console.log(`Задача 4.1 Вывод чисел без тела цикла: `)
+        for(i = 0; i < 10; console.log(i++)){}
+        
+        
+        //задание 4.2
+        console.log('Задача 4.2 Пирамида: ')
+        var str = ''
+        var i = 0
+        while(i<20) {
+            console.log(str += 'x')
+            i++
+        }
+        
         
     </script>
 </body>
