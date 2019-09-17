@@ -30,9 +30,8 @@
             [4, "Шарф", 600],
             ]
 
-            for(var i = 0; i < basket.length; i++)
-                totalPrice += basket[i][2]
-
+            for(var b of basket) totalPrice += b[2]
+            
             console.log("Итого: " + totalPrice)
 
             console.log("\nЗадание №3:\n")
@@ -40,8 +39,7 @@
             function countBasketPrice(arr)
             {
                 var totalPrice = 0
-                for(var i = 0; i < arr.length; i++)
-                    totalPrice += arr[i][2]
+                for(var b of arr) totalPrice += b[2]
                 return totalPrice
             }
 
