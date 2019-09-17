@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+
+<body>
+
+
+<script>
+    /*    Объявить две целочисленные переменные - a и b и задать им произвольные начальные значения.
+         Затем написать скрипт, который работает по следующему принципу:
+                * если a и b положительные, вывести их разность;
+                * если а и b отрицательные, вывести их произведение;
+                * если а и b разных знаков, вывести их сумму;
+                Ноль можно считать положительным числом.*/
+
+    var a = +prompt('Enter first number : ')
+    var b = +prompt('Enter second number : ')
+
+    if (a >= 0 && b >= 0) {
+        console.log(a + b)
+    } else if (a < 0 && b < 0) {
+        console.log(a * b)
+    } else if (a >= 0 && b < 0 || a < 0 && b >= 0) {
+        console.log(a + b)
+    }
+</script>
+
+<script>
+    /*Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.*/
+
+    var a = +prompt('Enter number between 0 - 15: ')
+
+    switch (a) {
+        case 0:
+            console.log(a++)
+        case 1:
+            console.log(a++)
+        case 2:
+            console.log(a++)
+        case 3:
+            console.log(a++)
+        case 4:
+            console.log(a++)
+        case 5:
+            console.log(a++)
+        case 6:
+            console.log(a++)
+        case 7:
+            console.log(a++)
+        case 8:
+            console.log(a++)
+        case 9:
+            console.log(a++)
+        case 10:
+            console.log(a++)
+        case 11:
+            console.log(a++)
+        case 12:
+            console.log(a++)
+        case 13:
+            console.log(a++)
+        case 14:
+            console.log(a++)
+        case 15:
+            console.log(a++)
+            break
+        default:
+            console.log('Incorrect enter.Try again ')
+    }
+</script>
+
+<script>
+    /*Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.*/
+
+    function sum(x, y) {
+        return x + y
+    }
+
+    function mult(x, y) {
+        return x * y
+    }
+
+    function div(x, y) {
+        if (y === 0) {
+            return 'you can`t divide by zero'
+        } else {
+            return x / y
+        }
+    }
+
+    function sub(x, y) {
+        return x - y
+    }
+
+    console.log(`Sum = ${sum(10, 10)};`)
+    console.log(`Mult = ${mult(10, 10)};`)
+    console.log(`Div = ${div(10, 10)};`)
+    console.log(`Sub = ${sub(10, 10)};`)
+
+</script>
+
+<script>
+    /* Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения
+    аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из
+    арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).*/
+
+    function mathOperation(agr1, arg2, func) {
+        switch (func) {
+            case '+':
+                return sum(agr1, arg2)
+            case '-':
+                return sub(arg1, arg2)
+            case '*':
+                return mult(agr1, arg2)
+            case '/':
+                return div(agr1, arg2)
+            default:
+                return 'Unknown parameters, try again'
+        }
+    }
+</script>
+
+<script>
+    /*    С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.*/
+    function power(val, pow) {
+        if (pow === 0) {
+            return 1
+        } else {
+            return val * power(val, pow - 1)
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>
