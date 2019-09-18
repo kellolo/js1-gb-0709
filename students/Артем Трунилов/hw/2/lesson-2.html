@@ -43,46 +43,44 @@
     <script>
 
         a = +prompt("Введите чиcло от 0 до 15:");
-        var sum = "";
 
         switch (a) {
             case 0:
-                sum += a++ + " ";
+                console.log(a++);
             case 1:
-                sum += a++ + " ";
+                console.log(a++);
             case 2:
-                sum += a++ + " ";
+                console.log(a++);
             case 3:
-                sum += a++ + " ";
+                console.log(a++);
             case 4:
-                sum += a++ + " ";
+                console.log(a++);
             case 5:
-                sum += a++ + " ";
+                console.log(a++);
             case 6:
-                sum += a++ + " ";
+                console.log(a++);
             case 7:
-                sum += a++ + " ";
+                console.log(a++);
             case 8:
-                sum += a++ + " ";
+                console.log(a++);
             case 9:
-                sum += a++ + " ";
+                console.log(a++);
             case 10:
-                sum += a++ + " ";
+                console.log(a++);
             case 11:
-                sum += a++ + " ";
+                console.log(a++);
             case 12:
-                sum += a++ + " ";
+                console.log(a++);
             case 13:
-                sum += a++ + " ";
+                console.log(a++);
             case 14:
-                sum += a++ + " ";
+                console.log(a++);
             case 15:
-                sum += a++ + " ";
+                console.log(a++);
                 break;
             default:
                 console.log("Пожалуйста, проверьте правильность ввода данных и повторите попытку!");
         }
-        console.log(sum);
 
     </script>
 
@@ -106,12 +104,11 @@
         function div(x, y) {
             return x / y;
         }
-
-        console.log("Результат сложения = " + add(10, 10));
-        console.log("Результат вычитания = " + sub(10, 10));
-        console.log("Результат умножения = " + mult(10, 10));
-        console.log("Результат деления = " + div(10, 10));
-
+      
+        console.log(`Результат сложения = ${add(10, 10)};`);
+        console.log(`Результат вычитания = ${sub(10, 10)};`);
+        console.log(`Результат умножения = ${mult(10, 10)};`);
+        console.log(`Результат деления = ${div(10, 10)};`);
     </script>
 
     <!-- Задача 4. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), 
@@ -153,11 +150,11 @@
         var val = +prompt("Введите число");
         var pow = +prompt("Введите степень для возведения:");
 
-        function power(val, pow) {
+        function power(val, pow) { //(2, 3)
             if (pow == 0)
                 return 1;
             else
-                return val * power(val, pow - 1);
+                return val * power(val, pow - 1); 
         }
 
         console.log(power(val, pow));

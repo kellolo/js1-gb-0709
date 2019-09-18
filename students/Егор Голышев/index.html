@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Задание 1
+        let a = [2]
+        num = 2
+        while (num <= 100) {
+            var result = 1;
+            for (var i = 0; i < a.length; i++) {
+                if (num % a[i] === 0) {
+                    result = 0;
+                }
+            }
+            if (result === 1) {
+                a.push(num);
+            }
+            num++;
+        }
+        console.log(a);
+    </script>
+    
+    <script>
+        //Задание 4
+        let a = 0
+        for (let i = a; i < 10; i++) console.log(i)
+    </script>
+    
+    <script>
+        //Задание 5
+        let arr = '\nx';
+        for (let i = 20; i--;) {
+            console.log(arr);
+            arr = arr + 'x';
+        }
+    </script>
+</body>
+
+</html>
