@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 2
+        var log = true
+
+        function easy (eas){
+            var t = 2
+            while (t < eas){
+                if (eas % t == 0){
+                    return false
+                }
+                t++
+            }
+            return true
+        }
+
+        while (log){
+            if (easy(i) == true){
+                console.log(i)
+            }
+            if (i++ >= 100){
+                log = false
+            }
+        }
+    </script> 
+    <script>
+        for(var i = 0; i <=9; console.log(i++)){
+
+        }
+    </script>
+    <script>
+        var i = 1
+        var res = ''
+        var log = true
+
+        function pyramid(pyr){
+            if(pyr <= 20){
+                res += 'x'
+                console.log(res)
+                return true
+            }else{
+                return false
+            }
+        }
+
+        while(log){
+            log = pyramid(i)
+            i++
+        }
+    </script>
+</body>
+</html>
