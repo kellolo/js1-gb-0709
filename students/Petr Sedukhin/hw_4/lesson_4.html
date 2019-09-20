@@ -24,9 +24,29 @@
             }
             let obj = {'единицы': +num[2], 'десятки': +num[1], 'сотни': +num[0]}
             return obj
+        }        
+    </script>
+    <script>
+        let produkt_1 = {
+            name : 'name_1', 
+            price : 100, 
+            count : 2, 
+            TotalPrice(){
+            return this.price*this.count
+            } 
+        }       
+        let produkt_2 = {
+            name : 'name_2', 
+            price : 340, 
+            count : 4, 
+            TotalPrice(){
+            return this.price*this.count
+            } 
         }
-
-        
+        let basket = [produkt_1, produkt_2]
+        let sum = 0
+        basket.forEach(function(el, i){sum += el.TotalPrice()})
+        console.log(`Продуктов в корзине на ${sum}`)
     </script>
 </body>
 </html>
