@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+
+<body>
+
+<script>
+    /*    С помощью цикла while вывести все простые числа в промежутке от 0 до 100*/
+
+    let isEval = []
+    for (let n = 0; n < 100; n++) {
+        isEval.push(true)
+    }
+
+    let i = 0
+    while (i <= Math.sqrt(isEval.length)) {
+        if (i<2){
+            isEval[i] = false
+        }else if (isEval[i]) {
+            for (let j = i * i; j < isEval.length; j += i) {
+                isEval[j] = false
+            }
+        }
+        i++
+    }
+
+    for (i in isEval){
+        if (isEval[i]){
+            console.log(i)
+        }
+    }
+</script>
+
+<script>
+/*    Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+for(…){// здесь пусто}*/
+
+for (let i = 0; i < 10 ; console.log(i), i++){}
+
+</script>
+
+<script>
+    // Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов
+
+    function strRepeat(symbol, n ) {
+        return symbol.repeat(n)
+    }
+
+    for (let i=0; i<20; i++){
+        console.log(strRepeat(`*`, i))
+    }
+
+</script>
+
+</body>
+
+</html>
