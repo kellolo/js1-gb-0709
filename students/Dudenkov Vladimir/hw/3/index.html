@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <meta http-equiv="X-UA-Cpmpatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            console.log("Домашнее задание. Студент: Дуденков Владимир\n")
+            console.log("Задание №1:\n")
+
+            var i = 1
+            while(i != 100)
+            {
+                var flag = true
+                for(var j = 2; j < i; j++)
+                    if(i % j == 0) flag = false
+                if(flag) console.log(i)
+                i++
+            }
+
+            console.log("\nЗадание №2:\n")
+            var totalPrice = 0;
+            var basket = [
+            [1, "Футболка", 800],
+            [2, "Шорты", 1500],
+            [3, "Кроссовки", 3900],
+            [4, "Шарф", 600],
+            ]
+
+            for(var b of basket) totalPrice += b[2]
+            
+            console.log("Итого: " + totalPrice)
+
+            console.log("\nЗадание №3:\n")
+
+            function countBasketPrice(arr)
+            {
+                var totalPrice = 0
+                for(var b of arr) totalPrice += b[2]
+                return totalPrice
+            }
+
+            console.log(countBasketPrice(basket))
+
+            console.log("\nЗадание №4:\n")
+            for(var i = 0; i <=9; console.log(i++));
+
+            console.log("\nЗадание №5:\n")
+            var max = 5
+            var count = 0
+            var text = ""
+            while(count != max)
+            {
+                text += "x"
+                console.log(text)
+                count++
+            }
+
+
+
+        </script>
+    </body>
+</html>
