@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html Lang="en">
+<head></head>
+<body>
+    <script>
+        console.log ( '---Задача №1---' )
+        
+        function obj (num) {
+            let obj = {}
+            if (num.length <= 3) {
+                obj.единицы = +num [2]
+                obj.десятки = +num [1] 
+                obj.сотни = +num [0]
+                return obj
+            } else {
+                console.log ('Введено некорректное значение')
+                return obj
+            }
+        }
+        console.log (objNums = obj ([...prompt('Введите число от 0 до 999: ')]))
+        
+    </script>
+    <script>
+        console.log ( '---Задача №2---' )
+        let tShort = {colour: 'green', size: 'M', price: 400}
+        let cap = {colour: 'red', size: 'S', price: 100}
+        let shorts = {colour: 'blue', size: 'L', price: 500}
+        let sneakers = {colour: 'black', size: '40', price: 1000}
+        let jacket = {colour: 'orange', size: 'XL', price: 1500}
+        let socks = {colour: 'white', size: 'M', price: 300}
+        let basket = {tShort, cap, shorts, sneakers, jacket, socks}
+        let total = 0
+        function countBasketPrice () {
+            for (let item in basket) {
+                console.log(item + ', price:    ' + basket [item].price)        
+                total += basket [item].price
+            }
+            return total
+        }
+        console.log('Всего товаров на сумму: ' + countBasketPrice())
+    </script>
+    
+    </body>
+</html>
