@@ -10,5 +10,5 @@ function objectNum(simpleNum) {                             // создаем ф
     }
     else alert('Число должно быть меньше 999')              // если число больше 1000, выводим предупреждение
 }
-runningTitle()
+
 console.log(`введенное число ${simpleNum}, единицы: ${num.units || 'отсутствуют'}, десятки: ${num.tens || 'отсутствуют'}, сотни: ${num.hundreds || 'отсутствуют'}`)
