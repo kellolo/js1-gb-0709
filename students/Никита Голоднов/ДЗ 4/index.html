@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var item = ['Товар 1', 'Товар 2', 'Товар 3']
+    var price = [199, 399, 299]
+
+
+function countBasketPrice() {
+    let summ = 0;
+    for (let i = 0; i < price.length; i++) {
+        summ += price[i];
+    }
+    console.log('Стоимость всех товаров ' + summ);
+}
+    </script>
+</body>
+</html>
