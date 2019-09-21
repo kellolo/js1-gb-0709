@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function randomize () {
+            return Math.floor (Math.random () * 10) // 0-9
+        }
+
+        function getNum () {
+            let arr = ['', '', '', '']    
+            arr.forEach(function callBack(el, i) {arr.indexOf(r = randomize()) < 0 ? arr[i] = r : callBack(el, i)})
+            return arr
+        }
+
+        getNum()
+    </script>
+</body>
+</html>

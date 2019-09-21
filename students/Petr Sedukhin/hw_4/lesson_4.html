@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        res = NumToObj (prompt('Введите число'))
+        console.log(res)
+
+        function NumToObj (num){
+            num = Array.from(num)
+            if (num.length > 3) {
+                console.log('Число состоит из более чем из трех знаков')
+                let obj = {}
+                return obj
+            } else {
+                while(num.length < 3){
+                    num.unshift(0)
+                }     
+            }
+            let obj = {'единицы': +num[2], 'десятки': +num[1], 'сотни': +num[0]}
+            return obj
+        }        
+    </script>
+    <script>
+        let produkt_1 = {
+            name : 'name_1', 
+            price : 100, 
+            count : 2, 
+            TotalPrice(){
+            return this.price*this.count
+            } 
+        }       
+        let produkt_2 = {
+            name : 'name_2', 
+            price : 20, 
+            count : 4, 
+            TotalPrice(){
+            return this.price*this.count
+            } 
+        }
+        let basket = [produkt_1, produkt_2]
+        let sum = 0
+        basket.forEach(function(el, i){sum += el.TotalPrice()})
+        console.log(`Продуктов в корзине на ${sum}`)
+    </script>
+</body>
+</html>
