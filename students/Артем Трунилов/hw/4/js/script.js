@@ -41,6 +41,7 @@ function changeObject(number) {
     }
     return obj;
 }
+
 number = +prompt('Введите число от 0 до 999:');
 console.log(changeObject(number));
 
