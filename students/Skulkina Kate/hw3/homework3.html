@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework</title>
+</head>
+
+<body>
+    <script>
+        //      //solution1
+        //      //С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+        console.log ('Здесь вы видите 1 задание:\n')
+        let Array = [];
+        let Arr = 1;
+
+        while (Arr <= 100) {
+            if (Arr == 1) {
+                Array.push(1)
+            } else {
+                let i = 2;
+                while (Arr % i) {
+                    i += 1;
+                }
+                if (i == Arr) {
+                    Array.push(i);
+                }
+            }
+            Arr += 1;
+        }
+        console.log('Массив простых чисел:', Array);
+
+        //solution2
+        //Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+        console.log ('Здесь вы видите 2 задание:\n')
+        for (let b = 0; b <= 9; console.log(b++));
+
+
+        //solution3
+        //*Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+        // x
+        // xx
+        // xxx
+        // xxxx
+        // xxxxx 
+console.log ('Здесь вы видите 3 задание:\n')
+        var count = "";
+        for (let i = 1; i < 20; i++) {
+            count += "#";
+            console.log(count)
+        }
+    </script>
+
+</body>
+
+</html>
