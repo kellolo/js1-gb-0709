@@ -8,6 +8,7 @@
 // Решение 1.
 
 function convertObject(number) {
+    
     if (isNaN(+number) || number < 0 || number > 999) {
         console.log("Ошибка! Некорректное значение");
         return {};
