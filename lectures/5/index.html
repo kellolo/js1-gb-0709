@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <ul class="my-list">
+        <li>1</li>
+        <li id="list-item">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <ul id="test">
+
+    </ul>
+</head>
+<body>
+
+
+    <script>
+        // 1 взять элемент
+        //let el = document.getElementById ('test')
+        let el = document.querySelector ('#test')
+
+        // 2 создать ребеночка
+        
+        // let child = document.createElement ('li')
+        // child.innerText = 'new element'
+        // child.innerHTML = 'new element'
+        // child.classList.add ('newCreated')
+
+        // 3 - вставить ребеночка в родителя
+
+        // el.appendChild (child)
+
+
+        //template DOM
+
+        for (let i = 1; i <= 5; i++) {
+            el.innerHTML += `<li id="item-number-${i}"> new item ${i} </li>`
+        }
+
+        let nodeListArray = [...document.querySelectorAll ('li')]
+        nodeListArray.forEach (el => {el.style.color = "red"})
+
+        // let number = [...prompt ('enter num 0...999')]
+        // let numObj
+
+        // if (+number > 999) {
+        //     alert ('!!!!!')
+        // } else {
+        //     if (number.length < 3) { 
+        //         while (number.length < 3) {
+        //             number.unshift (0)
+        //         }
+        //     }
+        //     numObj = {
+        //         units: +number[2],
+        //         decimals: +number [1],
+        //         hundreds: +number [0]
+        //     }
+        // }
+
+        
+    </script>
+</body>
+</html>
