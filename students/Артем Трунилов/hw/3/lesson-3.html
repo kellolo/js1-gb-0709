@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson-3</title>
+</head>
+
+<body>
+
+    <!-- Задача 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100. -->
+
+    <!-- Решение 1. С помощью цикла while. -->
+
+    <script>
+
+        var i = 2;
+        var n = 100
+
+        while (i <= n) {
+            if (test()) {
+                console.log(i);
+            }
+            i++
+        }
+
+        function test() {
+
+            var j = 2;
+
+            while (j < i) {
+                if (i % j == 0) {
+                    return false;
+                }
+                j++;
+            }
+            return true;
+        }
+
+    </script>
+
+    <!-- Решение 2. С помощью метода forEach(). -->
+
+    <script>
+
+        var arr = [];
+
+        for (var i = 2; i <= 100; i++) {
+            arr.push(i);
+        }
+
+        arr.forEach(function (el) {
+            for (var j = 2; j < el; j++) {
+                if (el % j == 0) {
+                    return;
+                }
+            }
+            console.log(el);
+        })
+
+    </script>
+
+    <!-- Задача 2. Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. 
+    Выглядеть это должно так: for(…) {// здесь пусто}  -->
+
+    <script>
+
+        for (var i = 0; i <= 9; console.log(i++)) {
+        }
+
+    </script>
+
+    <!-- Задача 3. Нарисовать пирамиду с помощью console.log, как показано на рисунке, 
+         только у вашей пирамиды должно быть 20 рядов, а не 5: 
+         x 
+         xx 
+         xxx 
+         xxxx 
+         xxxxx -->
+
+    <script>
+
+        var result = '';
+
+        for (var i = 1; i <= 20; i++) {
+            result += 'x';
+            console.log(result);
+        }
+
+    </script>
+
+</body>
+
+</html>

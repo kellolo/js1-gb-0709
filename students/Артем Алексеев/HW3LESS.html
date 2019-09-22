@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       
+    //задание 1  
+       
+       // циклы освоил, но сам способ вычисления простого числа гуглил
+       // можно просто выводить числа, но для примера сделал через массив
+       
+      var arr = []
+       
+       var i = 2;
+       
+        while (i <= 100) {
+            
+            var j = 2;
+            var k = 0
+            
+            while (j <= Math.round(Math.sqrt(i))) {
+                if (i % j == 0) {
+                    k = 1
+                    j++
+                    continue
+                }
+                j++
+                
+            }
+            if (k == 0) {
+                arr.push(i)
+            }
+            i++;
+            
+        }
+       
+       console.log(arr)
+       
+       
+       
+    </script>
+     
+    <script>
+      
+      //задание 4
+      
+      for (i = 0; i < 10; console.log(i++)){
+      }
+       
+       
+    </script>
+      
+       
+    <script>
+    //задание 5
+       
+       var a = "x"
+       for(var i = 1; i <= 20; i++){
+           a = a + "x"
+           console.log(a)
+           
+       }
+           
+    
+    
+    </script>
+    
+</body>
+</html>

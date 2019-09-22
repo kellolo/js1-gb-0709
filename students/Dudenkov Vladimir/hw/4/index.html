@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomeWork</title>
+</head>
+<body>
+    <script>
+        console.log("Домашнее задание. Урок №3. Студент: Дуденков Владимир")
+        console.log("\nЗадание №1:\n")
+        var userEnter = +prompt("Введите чисто от 0 до 999: ")
+
+
+        function createObj(_userEnter)
+        {
+            var units = _userEnter % 10 
+            var tens = Math.floor(_userEnter / 10) % 10
+            var hundreds = Math.floor(_userEnter / 100) % 10
+            return obj = {'единицы': units, 'десятки': tens, 'сотни': hundreds}
+        }
+
+        if(userEnter > 999) console.log("Вы ввели число больше 999!")
+        else console.log(createObj(userEnter))
+
+        console.log("\nЗадание №2: \n")
+
+        var totalPrice = 0;
+            var basket = [
+            {'Id': 1, 'Title': "Футболка", 'Price': 900},
+            {'Id': 2, 'Title': "Шорты", 'Price': 1449},
+            {'Id': 3, 'Title': "Кроссовки", 'Price': 3900},
+            {'Id': 4, 'Title': "Шарф", 'Price': 599},
+            ]
+
+            function countBasketPrice(arr)
+            {
+                var totalPrice = 0
+                for(var b of arr) totalPrice += b['Price']
+                return totalPrice
+            }
+
+            console.log("В корзине " + basket.length + " товара\nИтого: " + countBasketPrice(basket))
+
+    </script>
+</body>
+</html>
