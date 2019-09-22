@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+// 1 задание: С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+
+let max = 100;
+let arg = 2;
+
+function verifyNumber (num) {
+    let count = 2;
+    while(count < num) {
+        if (num % count == 0) { 
+            return false;
+        }
+        count++     
+    }
+    return true; 
+}
+
+while (arg <= max) {
+    if(verifyNumber(arg)) {
+        console.log(arg);
+    }
+    arg++;
+} 
+
+
+// 2 задание: Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. 
+// Выглядеть это должно так: for(…){// здесь пусто}
+
+for(let i=0; i <= 9; console.log(i++)){}
+
+
+// 3 задание: Нарисовать пирамиду с помощью console.log, как показано на рисунке, 
+// только у вашей пирамиды должно быть 20 рядов, а не 5:
+
+var count = "";
+for(var i = 1; i < 20; i++) {
+    count+="*";
+    console.log(count);
+} 
+        
+</script>
+
+</body>
+</html>

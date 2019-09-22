@@ -12,7 +12,7 @@
     <script>
 
         // task 1
-        console.log('task 1')
+        console.log(`task 1`)
         var a = 1, b = 1, c, d
         c = ++a; console.log(c)       // 2, т.к. префиксный оператор ++ увеличивает значение переменной a, затем переменной c присваивается это увеличенное значение
         d = b++; console.log(d)       // 1, т.к. сначала происходт присвоение переменной b значения переменной d, а уже затем постфиксный оператор ++ увеличивает значение d
@@ -23,14 +23,14 @@
 
 
         //task 2
-        console.log('task 2')
+        console.log(`task 2`)
         var a = 2
         var x = 1 + (a *= 2)
         console.log(x)          // 5, т.к. сначала выполнится действие в скобках, где переменной а присвоится 4, затем сложение за скобками
 
 
         // task 3
-        console.log('task 3')
+        console.log(`task 3`)
         var a = 9
         var b = 7
         if (a >= 0 && b >= 0) console.log(a - b)
@@ -38,75 +38,47 @@
         else console.log(a + b)
 
         //task 4
-        console.log('task 4')
-        var a = +prompt('enter a from 0 to 15')
-        if (a >= 0 && a <= 15) {
-            switch (a) {
-                case 0:
-                    console.log(0)
-                    break
+        console.log(`task 4`)
+        var a = +prompt(`enter a from 0 to 15`)
 
-                case 1:
-                    console.log('0, 1')
-                    break
+        switch (a) {
+            case 0:
+                console.log(a++)
+            case 1:
+                console.log(a++)
+            case 2:
+                console.log(a++)
+            case 3:
+                console.log(a++)
+            case 4:
+                console.log(a++)
+            case 5:
+                console.log(a++)
+            case 6:
+                console.log(a++)
+            case 7:
+                console.log(a++)
+            case 8:
+                console.log(a++)
+            case 9:
+                console.log(a++)
+            case 10:
+                console.log(a++)
+            case 11:
+                console.log(a++)
+            case 12:
+                console.log(a++)
+            case 13:
+                console.log(a++)
+            case 14:
+                console.log(a++)
+            case 15:
+                console.log(a)
+                break;
+            default:
+                console.log(`нужно было ввести число от 0 до 15`)
 
-                case 2:
-                    console.log('0, 1, 2')
-                    break
-
-                case 3:
-                    console.log('0, 1, 2, 3')
-                    break
-
-                case 4:
-                    console.log('0, 1, 2, 3, 4')
-                    break
-
-                case 5:
-                    console.log('0, 1, 2, 3, 4, 5')
-                    break
-
-                case 6:
-                    console.log('0, 1, 2, 3, 4, 5, 6')
-                    break
-
-                case 7:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7')
-                    break
-
-                case 8:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8')
-                    break
-
-                case 9:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9')
-                    break
-
-                case 10:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10')
-                    break
-
-                case 11:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11')
-                    break
-
-                case 12:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12')
-                    break
-
-                case 13:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13')
-                    break
-
-                case 14:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14')
-                    break
-
-                default:
-                    console.log('0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15')
-            }
-
-        } else console.log('value is incorrect')
+        }
 
 
         //task 5
@@ -116,32 +88,32 @@
         function division(arg1, arg2) { return a / b }
 
         //task 6
-        console.log('task 5 and task 6')
-        var a = +prompt('enter a')
-        var b = +prompt('enter b')
-        var userOperation = prompt('enter math operation +, -, * or /')
+        console.log(`task 5 and task 6`)
+        var a = +prompt(`enter a`)
+        var b = +prompt(`enter b`)
+        var userOperation = prompt(`enter math operation +, -, * or /`)
         function mathOperation(arg1, arg2, operation) {
             switch (operation) {
-                case '+':
+                case `+`:
                     return addition(arg1, arg2)
-                case '-':
+                case `-`:
                     return subtraction(arg1, arg2)
-                case '*':
+                case `*`:
                     return multiplication(arg1, arg2)
-                case '/':
+                case `/`:
                     return division(arg1, arg2)
                 default:
-                    console.log('error of type')
+                    console.log(`error of type`)
             }
         }
-        console.log('result = ', mathOperation(a, b, userOperation))
+        console.log(`result = `, mathOperation(a, b, userOperation))
 
         //task 7
-        console.log('task 7')
+        console.log(`task 7`)
         console.log(null == 0) // null - это отдельны тип данных и равен только undefined, при други опереторах сравнения приводится к 0 
 
         //task 8
-        console.log('task 8')
+        console.log(`task 8`)
         function power(val, pow) {
             if (val == 0) return 0
             else if (pow == 0) return 1
