@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //сделала задание с корзиной через объекты вместо массива чисел
+        //надеюсь я правильно поняла, что нужно было сделать)
+
+
+        var data = [{
+                'id': 1,
+                'name': 'lemon',
+                'color': 'yellow',
+                'price': 120
+            },
+            {
+                'id': 2,
+                'name': 'mango',
+                'color': 'yellow',
+                'price': 130
+            },
+            {
+                'id': 3,
+                'name': 'mango',
+                'color': 'green',
+                'price': 100
+            },
+            {
+                'id': 4,
+                'name': 'apple',
+                'color': 'red',
+                'price': 105
+            },
+            {
+                'id': 5,
+                'name': 'banana',
+                'color': 'yellow',
+                'price': 150
+            },
+            {
+                'id': 6,
+                'name': 'orange',
+                'color': 'green',
+                'price': 90
+            },
+            {
+                'id': 7,
+                'name': 'potato',
+                'color': 'brown',
+                'price': 80
+            },
+            {
+                'id': 8,
+                'name': 'tomato',
+                'color': 'red',
+                'price': 200
+            }
+        ]
+
+        function countBascketPrice(arr) {
+            var summ = 0;
+            for (var i = 0; i < arr.length; i++) {
+                summ += arr[i].price;
+            }
+
+            return summ;
+        }
+
+        console.log(countBascketPrice(data))
+    </script>
+</body>
+
+</html>
