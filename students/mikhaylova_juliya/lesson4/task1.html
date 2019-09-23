@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //задание №1
+
+        function createObject(x) {
+            var object = {};
+            if (x > 0 && x <= 999) {
+                object['hundred'] = Math.floor(x / 100);
+                object['dozen'] = Math.floor((x - (object.hundred * 100)) / 10);
+                object['unit'] = x - ((object.hundred * 100) + (object.dozen * 10));
+                return object;
+            } else {
+                console.log('Sorry, your number is more than 999');
+                return object;
+            }
+        }
+    </script>
+</body>
+
+</html>
