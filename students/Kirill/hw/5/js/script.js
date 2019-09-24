@@ -35,11 +35,11 @@
 
 (function drawChessField (size = 40) {
     let table = document.createElement(`table`);
-    let letters = ['','A','B','C','D','E','F','G','H',''];
-    let nearBlackChessmensRow = ['8', 'Л(ч)', 'К(ч)', 'С(ч)', 'Ф(ч)', 'Кр(ч)', 'С(ч)', 'К(ч)', 'Л(ч)', '8'];
-    let fartherBlackChessmensRow = ['7', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', '7'];
-    let nearWhiteChessmensRow = ['1', 'Л(б)', 'К(б)', 'С(б)', 'Ф(б)', 'Кр(б)', 'С(б)', 'К(б)', 'Л(б)', '1'];
-    let fartherWhiteChessmensRow = ['2', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', '2'];
+    const letters = ['','A','B','C','D','E','F','G','H',''];
+    const blacksNearChessmenСells = ['8', 'Л(ч)', 'К(ч)', 'С(ч)', 'Ф(ч)', 'Кр(ч)', 'С(ч)', 'К(ч)', 'Л(ч)', '8'];
+    const blacksFartherChessmenCells = ['7', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', '7'];
+    const whitesNearChessmenCells = ['1', 'Л(б)', 'К(б)', 'С(б)', 'Ф(б)', 'Кр(б)', 'С(б)', 'К(б)', 'Л(б)', '1'];
+    const whitesFartherChessmenCells = ['2', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', '2'];
 
     for (let i = 0, k = 9; i < letters.length; i++, k--) {
         let newRow = table.insertRow(i);
@@ -55,19 +55,19 @@
                     newCell.classList.add('legend-cell');
                     break;
                 case 1:
-                    newCell.innerHTML = nearBlackChessmensRow [j];
+                    newCell.innerHTML = blacksNearChessmenСells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 case 2:
-                    newCell.innerHTML = fartherBlackChessmensRow [j];
+                    newCell.innerHTML = blacksFartherChessmenCells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 case 7:
-                    newCell.innerHTML = fartherWhiteChessmensRow [j];
+                    newCell.innerHTML = whitesFartherChessmenCells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 case 8:
-                    newCell.innerHTML = nearWhiteChessmensRow [j];
+                    newCell.innerHTML = whitesNearChessmenCells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 default:
@@ -89,11 +89,11 @@
 
 (function drawChessField (size = 40) {
     let table = document.createElement(`table`);
-    let letters = ['','A','B','C','D','E','F','G','H',''];
-    let nearBlackChessmensRow = ['8','&#9820;','&#9822;','&#9821;','&#9819;','&#9818;','&#9821;','&#9822;','&#9820;','8'];
-    let fartherBlackChessmensRow = ['7','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','7'];
-    let nearWhiteChessmensRow = ['1','&#9814;','&#9816;','&#9815;','&#9813;','&#9812;','&#9815;','&#9816;','&#9814;','1'];
-    let fartherWhiteChessmensRow = ['2','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','2'];
+    const letters = ['','A','B','C','D','E','F','G','H',''];
+    const blacksNearChessmenСells = ['8','&#9820;','&#9822;','&#9821;','&#9819;','&#9818;','&#9821;','&#9822;','&#9820;','8'];
+    const blacksFartherChessmenCells = ['7','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','7'];
+    const whitesNearChessmenCells = ['1','&#9814;','&#9816;','&#9815;','&#9813;','&#9812;','&#9815;','&#9816;','&#9814;','1'];
+    const whitesFartherChessmenCells = ['2','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','2'];
 
     for (let i = 0, k = 9; i < letters.length; i++, k--) {
         let newRow = table.insertRow(i);
@@ -109,19 +109,19 @@
                     newCell.classList.add('legend-cell');
                     break;
                 case 1:
-                    newCell.innerHTML = nearBlackChessmensRow [j];
+                    newCell.innerHTML = blacksNearChessmenСells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 case 2:
-                    newCell.innerHTML = fartherBlackChessmensRow [j];
+                    newCell.innerHTML = blacksFartherChessmenCells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 case 7:
-                    newCell.innerHTML = fartherWhiteChessmensRow [j];
+                    newCell.innerHTML = whitesFartherChessmenCells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 case 8:
-                    newCell.innerHTML = nearWhiteChessmensRow [j];
+                    newCell.innerHTML = whitesNearChessmenCells [j];
                     (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
                     break;
                 default:
