@@ -1,44 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width" />
-<title>Страница</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ДЗ №5</title>
 </head>
 <body>
-    <CANVAS id="id_canvas" height="600" width="800"></CANVAS>
     
+        <script src="main.js">
     
-    <script>
-        var canvas = document.getElementById("id_canvas")
-        var context = canvas.getContext("2d")
-        var column = 10
-        var row = 10
-        var step = 30
-        var startPosition = {'x': 30, 'y': 30}
-        var black = "#000000"
-        var white = "#ffffff"
-
-        function Draw(_startPosition, color) 
-        {
-            context.fillStyle= color // произвольный цвет
-            context.fillRect(_startPosition.x, _startPosition.y, 30, 30) // рисуем прямоугольник
-        }
-
-        function start()
-        {
-            for(var i = 0; i < column; i++)
-            {
-                for(var j = 0; j < row; j++)
-                {
-                    if(j % 2 == 0) Draw(startPosition, black)
-                    else Draw(startPosition, white)
-
-                    startPosition.x += step
-                }
-                startPosition.x = i % 2 == 0 ? 60 : 30
-                startPosition.y += step
-            }
-        }
-    </script>
+        </script>
+    
 </body>
 </html>
