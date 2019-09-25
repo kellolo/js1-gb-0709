@@ -27,15 +27,15 @@ function setStyle(styles){
 
 function makeDesc(){
     let el = document.querySelector ('body')
-    el.innerHTML += `<table class = 'desc'><tbody>`
+    el.innerHTML += `<table class = 'desc'><tbody>`;
     el = document.querySelector('tbody')
     for (let i = 1; i <= 8; i++){
-        el.innerHTML += `<tr></tr>`
+        el.innerHTML += '<tr>'
     }
     el = [...document.querySelectorAll('tr')]
     el.forEach(element => {
         for(let i = 1; i <= 8; i++){
-            element.innerHTML += '<td></td>'
+            element.innerHTML += '<td>'
         }  
     });
 }
@@ -50,11 +50,10 @@ function setLets(arr){
         arr[i].innerHTML += `<div class = let>${lets[i]}</div>`
     }
 }
-ы
+
 function setNums(arr){
     for (i = 0; i <= 57; i += 8){
-        let s = i/8 + 1 // понимаю, что топорно, но ничего лучше не придумал
-        arr[i].innerHTML += `<div class = num>${s}</div>`
+        arr[i].innerHTML += `<div class = num>${i/8 + 1}</div>`
     }
 }
 
