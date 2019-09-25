@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    game ()
+    
+    function game () {
+        let num = getNum ()
+        let rounds = 10
+        let status = true
+        
+        while (status) {
+            if ( rounds >= 1 ) {
+                status = round (num)
+                status ? console.log (`Осталось ${--rounds} ходов`) : console.log ('ТЫ ПОБЕДИЛ')
+            } else {
+                status = false
+                console.log (`ТЫ ПРОИГРАЛ, КОЖАННЫЙ МЕШОК. Искомый вариант ${num}'`)
+                return false
+            }
+            //rounds--
+        }
+    }
+    
+    function round (dest) {
+        let bulls = 0
+        let cows = 0
+        
+        let attempt = [...prompt ('ВВЕДИ ЧИСЛО, СМЕРТНЫЙ')] // ['1', '2', '3', '4'] -----> [1, 2, 3, 4]
+        
+        for (let i = 0; i < 4; i++) {
+            if (+attempt [i] === dest [i]) {
+                bulls++
+            } else if ( dest.indexOf ( +attempt [i]) >= 0 ) {
+                cows++
+            }
+        }
+        
+        console.log (`ТВОЙ ВАРИАНТ ${attempt}`)
+        console.log (`Быков: ${bulls}; Коров: ${cows}`)
+
+        return (bulls === 4 ? false : true)
+    }
+    
+    function getRandomDigit () {
+        return Math.floor (Math.random () * 10) // 0-9
+    }
+
+    function getNum () {
+        let arr = ['', '', '', '']
+        // уделить внимание и подумать, а как это можно сделать вообще без циклов
+        arr.forEach(function callBack(el, i) {
+            arr.indexOf(r = getRandomDigit()) < 0 ? arr[i] = r : callBack(el, i)
+        })
+        
+        return arr
+    }
+    </script>
+</body>
+</html>
