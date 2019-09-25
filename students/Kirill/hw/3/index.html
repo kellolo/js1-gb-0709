@@ -7,6 +7,7 @@
 </head>
 <body>
 	<header>
+		<a href="../2/index.html">Предыдущее задание</a>&nbsp;<a href="../4/index.html">Следующее задание</a>
 		<h1>Практические задания после третьей лекции</h1>
 	</header>
 	<main>
@@ -14,7 +15,20 @@
 			<h3>Задание 1:</h3>
 			<p>С помощью цикла while вывести все простые числа в промежутке от 0 до 100</p>
 			<h3>Решение:</h3>
-			<pre></pre>
+			<pre>
+				let primes = [2]
+				let num = 2
+				
+				while (num <= 100) {
+					let numcheck = true
+					for (let i = 0; i < primes.length; i++) {
+						if (num % primes [i] === 0) numcheck = false
+					}
+					
+					if (numcheck) primes.push (num)
+					num++
+				}
+			</pre>
 		</section>
 		<section>
 			<h3>Задание 2:</h3>
