@@ -1,0 +1,22 @@
+.white-cell {
+    font-weight: bold;
+    text-align: center;
+    color: black;
+
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.black-cell {
+    font-weight: bold;
+    text-align: center;
+    color: white;
+
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.legend-cell {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(0, 0, 0, 0.75);
+}
