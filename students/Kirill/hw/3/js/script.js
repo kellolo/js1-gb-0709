@@ -1,5 +1,23 @@
 'use strict';
 
+//первое
+
+(function () {
+	let primes = [2]
+	let num = 2
+
+	while (num <= 100) {
+		let numcheck = true
+		for (let i = 0; i < primes.length; i++) {
+			if (num % primes [i] === 0) numcheck = false
+		}
+		if (numcheck) primes.push (num)
+		num++
+	}
+
+	console.log(`Простые числа до ста: ${primes}`);
+})();
+
 // третье
 
 (function () {
