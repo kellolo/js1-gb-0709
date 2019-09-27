@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="main-block"></div>
+    <script>
+function drawChess(){
+    let mainBlock = document.querySelector('.main-block');
+    let block;
+    let flag = true;
+
+    for (let i = 0; i<8; i++){
+        for (let j = 0; j<8; j++){
+            if (j==0) flag = !flag;
+
+            block = document.createElement('div');
+
+            if (flag) block.className = 'block black';
+            else block.className = 'block white';
+
+            mainBlock.appendChild(block);
+            flag = !flag;
+        }
+    }
+}
+
+drawChess();
+    </script>
+</body>
+</html>

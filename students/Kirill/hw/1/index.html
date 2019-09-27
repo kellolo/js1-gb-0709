@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Практическое задание после первой лекции</title>
+	<script src="js/script.js" async></script>
+</head>
+<body>
+	<header>
+		<a href="../2/index.html">Следующее задание</a>
+		<h1>Практические задания после первой лекции</h1>
+	</header>
+	<main>
+		<section>
+			<h3>Задание 1:</h3>
+			<p>Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в градусах по Фаренгейту. Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf – температура по Фаренгейту, Tc – температура по Цельсию</p>
+			<h3>Решение:</h3>
+			<pre>
+				function showFahrenheitTemp() {
+					var tempCelsius = +prompt('Задайте температуру в градусах Цельсия',0);
+					var convertCelsToFahr = function(tempCelsius) {
+						var tempFahrenheit = 9 / 5 * tempCelsius + 32;
+						return tempFahrenheit;
+					};
+
+					console.log(`Температура в градусах Фаренгейта ${convertCelsToFahr(tempCelsius)}`);
+				};
+			</pre>
+		</section>
+		<section>
+			<h3>Задание 2:</h3>
+			<p>Работа с переменными.
+			a) Объявить две переменные: admin и name. Записать в name строку «Василий»;
+			b) Скопировать значение из name в admin. Вывести admin (должно вывести «Василий»).</p>
+			<h3>Решение:</h3>
+			<pre>
+				function showAdminName() {
+					var admin;
+					var name;
+
+					name = 'Василий';
+					admin = name;
+					console.log(admin);
+				};
+			</pre>
+		</section>
+		<section>
+			<h3>Задание 3:</h3>
+			<p>Чему будет равно JS-выражение 1000 + "108"?</p>
+			<h3>Решение:</h3>
+			<pre>
+				console.log(1000 + "108");// "1000108"
+			</pre>
+		</section>
+	</main>
+
+</body>
+</html>

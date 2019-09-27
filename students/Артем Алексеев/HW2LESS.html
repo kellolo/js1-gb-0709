@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       
+       //задание 3
+    
+       var a = +prompt("Введите числа a") 
+       var b = +prompt("Введите числа b") 
+       var c
+       if(a > 0 && b > 0){
+           c = a - b
+       } else if(a < 0 && b < 0){
+           c = a * b
+       } else if(a < 0 && b > 0 || a > 0 && b < 0){
+           c = a + b
+       }
+       
+       console.log(c)
+       
+       // задание 4
+       
+       var a = parseInt(Math.random() * 15)
+       switch(a){
+           case 0:
+               console.log(a)
+               a++
+           case 1:
+               console.log(a)
+               a++
+           case 2:
+               console.log(a)
+               a++
+           case 3:
+               console.log(a)
+               a++
+           case 4:
+               console.log(a)
+               a++
+           case 5:
+               console.log(a)
+               a++
+           case 6:
+               console.log(a)
+               a++
+           case 7:
+               console.log(a)
+               a++
+           case 8:
+               console.log(a)
+               a++
+           case 9:
+               console.log(a)
+               a++
+           case 10:
+               console.log(a)
+               a++
+           case 11:
+               console.log(a)
+               a++
+           case 12:
+               console.log(a)
+               a++
+           case 13:
+               console.log(a)
+               a++
+           case 14:
+               console.log(a)
+               a++
+           case 15:
+               console.log(a)
+               a++
+           case 16:
+               break
+               
+               
+       }
+      
+       
+       // задание 5 
+       
+       var a = +prompt("Введите числа a") 
+       var b = +prompt("Введите числа b") 
+       
+       function one (c, d){
+           var result = c + d
+           return result
+       }
+       
+       function two (c, d){
+           var result = c - d
+           return result
+       }
+       
+       function three (c, d){
+           var result = c * d
+           return result
+       }
+       
+       function four (c, d){
+           var result = c \ d
+           return result
+       }
+        
+       var x = one(a,b)
+       console.log(x)
+       
+       x = two(a,b)
+       console.log(x)
+       
+       x = three(a, b)
+       console.log(x)
+       
+       x = four(a, b)
+       console.log(x)
+       
+       // задание 6
+       
+       function mathOperation(arg1, arg2, operation){
+           var result
+           switch (operation){
+               case "сложить":
+                   result = arg1 + arg2
+                   return result
+                   break
+               case "вычесть":
+                   result = arg1 - arg2
+                   return result
+                   break
+               case "умножить":
+                   result = arg1 * arg2
+                   return result
+                   break
+               case "разделить":
+                   result = arg1 / arg2
+                   return result
+                   break
+           }
+           
+       }
+       
+       var a = +prompt("Введите числа a") 
+       var b = +prompt("Введите числа b") 
+       var c = prompt("Напишите действие: сложить, вычесть, умножить или разделить")
+       var d = mathOperation(a, b, c)
+       console.log(d)
+       
+       // задание 7 
+       // null не равен 0 по специфике языка. есть такая вот таблица https://dorey.github.io/JavaScript-Equality-Table/
+       
+       var a = null
+       var b = 0
+       if(a == b){
+           console.log('равны')
+       }else {
+           console.log('не равны')
+       }
+       
+       // задание 8
+       // рекурсивная функция - вызывающая сама себя
+       
+       function power(val, pow){
+           if(pow == 1){
+               return val
+       } else {
+           return val * power(val, pow - 1)
+       }
+       }
+       
+       var a = +prompt("Введите число")
+       var b = +prompt("Введите степень")
+       var c = power(a, b)
+       console.log(c)
+       
+       
+         
+    
+    </script>
+    
+</body>
+</html>

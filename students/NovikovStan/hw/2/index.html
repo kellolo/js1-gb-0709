@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Homework_2</title>
+  </head>
+  <body>
+    <h1>Домашнее задание №2:</h1>
+    <h2>Задание 1.</h2>
+    <p>
+      var a = 1, b = 1, c, d; <br />
+      c = ++a; alert(c); // 2, т.к. инкремент префиксный и выполняется перед
+      присваиванием <br />
+      d = b++; alert(d); // 1, т.к. инкремент постфиксный и выполняется после
+      присваивания <br />
+      c = (2+ ++a); alert(c); // 5, т.к. а = 2, после инкрементации а = 3, после
+      сложения с = 5 <br />
+      d = (2+ b++); alert(d); // 4, т.к. b = 2, в операции сложения все еще b =
+      2, инкрементация выполняется уже после присваивания <br />
+      alert(a); // 3, т.к. а было инкрементировано дважды <br />
+      alert(b); // 3, т.к. b было инкрементировано дважды
+    </p>
+    <hr />
+    <h2>Задание 2.</h2>
+    <p>
+      var a = 2; <br />
+      var x = 1 + (a *= 2); <br>
+      Результат: x = 5
+    </p>
+    <hr>
+    <h2>Задание 3.</h2>
+    <label for="task3__inputA">Введите а:</label>
+    <input type="text" name="task3__inputA" id="task3__inputA"> <br>
+    <label for="t3__inputB">Введите b:</label> 
+    <input type="text" name="task3__inputB" id="task3__inputB"> <br>
+    <input type="button" id="task3__button" value="Calculate">
+    <p>Результат операции: <span id="task3__result"></span></p>
+    <hr>
+    <h2>Задание 4.</h2>
+    <p>Произвольное число от 0 до 15: <span id="task4__result__random"></span> </p>
+    <p>Числа от а до 15: <span id="task4__result__numbers"></span> </p>
+    <script>
+        var a = Math.floor(Math.random() * Math.floor(15));
+        task4ResultRandom = document.getElementById('task4__result__random');
+        task4ResultRandom.innerText = a;
+        task4ResultNumbers = document.getElementById('task4__result__numbers');
+        switch(a) {
+            case 0: task4ResultNumbers.innerText += '0, ';
+            case 1: task4ResultNumbers.innerText += '1, ';
+            case 2: task4ResultNumbers.innerText += '2, ';
+            case 3: task4ResultNumbers.innerText += '3, ';
+            case 4: task4ResultNumbers.innerText += '4, ';
+            case 5: task4ResultNumbers.innerText += '5, ';
+            case 6: task4ResultNumbers.innerText += '6, ';
+            case 7: task4ResultNumbers.innerText += '7, ';
+            case 8: task4ResultNumbers.innerText += '8, ';
+            case 9: task4ResultNumbers.innerText += '9, ';
+            case 10: task4ResultNumbers.innerText += '10, ';
+            case 11: task4ResultNumbers.innerText += '11, ';
+            case 12: task4ResultNumbers.innerText += '12, ';
+            case 13: task4ResultNumbers.innerText += '13, ';
+            case 14: task4ResultNumbers.innerText += '14, ';
+            case 15: task4ResultNumbers.innerText += '15 '; break;
+            default: task4ResultNumbers.innerText += 'Что-то пошло не так, извините ^.^';
+           
+        }
+    </script>
+    <hr>
+    <h2>Задание 5(6).</h2>
+    <p>Введите аргументы и выберите знак операции, затем нажмите на кнопку "="</p>
+    <input type="text" name="task5__inputA" id="task5__inputA"> 
+    <select name="task5__selector" id="task5__selector">
+            <option value="+" class="task5__selector_operation">+</option>
+            <option value="-" class="task5__selector_operation">-</option>
+            <option value="*" class="task5__selector_operation">*</option>
+            <option value="/" class="task5__selector_operation">/</option>
+        </select>
+    <input type="text" name="task5__inputB" id="task5__inputB"> 
+    <input type="button" value="=" id="task5__calculate">
+    <nobr id="task5__result"></nobr>
+    <hr>
+    <h2>Задание 7.</h2>
+    <p>Null - это условное обозначение отсутсвия какого-либо значения. 0 - это значение равное нулю, цифра.</p>
+    <hr>
+    <h2>Задание 8.</h2>
+    <label for="task8__inputVal">Введите базовое число(val):</label>
+    <input type="text" name="task8__inputVal" id="task8__inputVal"> <br>
+    <label for="task8__inputPov">Введите степень(pov):</label> 
+    <input type="text" name="task8__inputPov" id="task8__inputPov"> <br>
+    <input type="button" id="task8__calculate" value="Calculate">
+    <p>Результат операции: <span id="task8__result"></span></p>
+   
+    <script src="script.js" defer></script>
+  </body>
+</html>

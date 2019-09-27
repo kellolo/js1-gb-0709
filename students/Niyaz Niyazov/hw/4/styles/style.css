@@ -1,0 +1,347 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#header {
+    border: 1px solid #b5b7ba;
+    background-color: #dfdfdf;
+    min-width: 1280px;
+    height: 50px;
+    text-align: center;
+    padding-top: 18px;
+}
+
+#header #selected {
+    color: #000;
+}
+
+#center {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#header a {
+    color: #4d4d4d;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: left;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+#header span {
+    padding: 0 38px;
+}
+
+#content {
+    height: 806px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+#content h1 {
+    min-width: 1200px;
+    text-align: center;
+    color: #2e353d;
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#content h3 {
+    color: #242424;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: left;
+    margin-left: 41px;
+    margin-bottom: 52px;
+}
+
+#content h5 {
+    color:  #242424;
+    font-size: 24px;
+    text-align: left;
+}
+
+#content img {
+    margin-left: 17px;
+}
+
+#content #box_text {
+    width: 1200px;
+    
+    float: center;
+    padding: 30px 135px 330px 330px;
+}
+
+#content #box_text_center {
+    width: 1200px;
+    background-color: #ffffff;
+    float: center;
+    padding: 49px 48px 51px 76px;
+}
+
+#content #box_text p {
+    color: #242424;
+    font-size: 24px;
+    font-weight: 100;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+#content #box_text a  {
+    color: #40678a;
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+    text-decoration: none;
+    padding-right:30px;
+}
+
+
+#content .media {
+    margin-right: 0;
+}
+
+#content #box {
+    background-color: #ffffff;
+    width: 1238px;
+    height: 446px;
+    margin: 0 auto;
+    padding-top: 37px;
+    padding-left: 38px;
+}
+
+#content #box p {
+    color: #242424;
+    font-size: 24px;
+    font-weight: 100;
+    text-align: left;
+    margin-top: 37px;
+    margin-bottom: 30px;
+}
+
+#content #box input {
+    border: 1px solid #a0a0a0;
+    background-color: #f5f5f5;
+    width: 457px;
+    height: 34px;
+    padding-left:10px;
+    font-size:20px;
+    font-weight: 100;
+    margin-bottom: 12px;
+}
+
+#content #box a {
+    display: block;
+    float: left;
+    background-color:  #8cbbd3;
+    color:  #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding:11px 51px;
+}
+
+#content #box a:hover {
+    background-color: #5ba1d3;
+}
+
+footer {
+    min-height: 140px;
+    line-height: 140px;
+    background-color: #434445;
+    color: #a4a4a4;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+#footer a {
+    color: inherit;
+}
+
+#result {
+    min-width: 1200px;
+    text-align: center;
+    color: #2e353d;
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  border: 1px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #ea7777;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+.container {
+    width: 300px;
+}
+.container p {
+    border: 1px solid: #ff0000;
+}
+.inputs {
+    margin-bottom: 25px;
+    color: #dcdcdc;
+    font-size: 80%;
+    text-align: left;
+    padding-left: 10px;
+
+}
+
+#main_div {
+    border: 1px;
+    border-style: solid;
+    border-color: coral;
+    height: 100%;
+    width: 70%;
+    background-color: powderblue;
+
+
+}
+
+#basket_div {
+
+    border: 1px;
+    border-style: solid;
+    border-color: coral;
+    height: 100%;
+    width: 70%;
+    background-color: powderblue;
+
+
+}
+#total_div {
+    border: 1px;
+    border-style: solid;
+    border-color: #92a8d1;;
+    height: 100%;
+    width: 100%-40px;
+    background-color: powderblue;
+
+
+}
+
+#item_list   {
+    border: 1px;
+    border-style: solid;
+    border-color: coral;
+    height: 100%;
+    width: 70%;
+    background-color: powderblue;
+
+
+}

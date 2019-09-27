@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //задание 1 простые числа
+
+        var arr = []                    
+        
+        for (i = 0; i <= 100; i++) {
+            arr.push(i)
+        }
+        
+        arrFiltered = arr.filter((x) => {
+            if (x < 2) return false
+            for (var i = 2; i < x; i++) {
+                if (!(x % i)) return false
+            }
+            return true
+        })
+        
+        console.log(`Задача 1. Массив простых чисел от 1 до 100: ${arrFiltered}`)
+        
+        
+        //задание 4.1 
+        console.log(`Задача 4.1 Вывод чисел без тела цикла: `)
+        for(i = 0; i < 10; console.log(i++)){}
+        
+        
+        //задание 4.2
+        console.log('Задача 4.2 Пирамида: ')
+        var str = ''
+        var i = 0
+        while(i<20) {
+            console.log(str += 'x')
+            i++
+        }
+        
+        
+    </script>
+</body>
+</html>

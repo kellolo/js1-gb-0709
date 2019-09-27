@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+
+        var a = 2
+
+        function simpleNum (number) {
+            var b = 2
+            while (b < number) {
+                if (number % b == 0) {
+                    return false
+                }
+                b++
+            }
+            return true
+        }
+
+        while (a <= 100) {
+            if(simpleNum(a)){
+            console.log(a)
+            }
+            a++
+        }
+
+// 4.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+// for(…){// здесь пусто}
+
+        for (var i = 0; i <= 9; console.log(i++)){}
+
+// 4) *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+// x
+// xx
+// xxx
+// xxxx
+// xxxxx
+
+        var p = '';
+        for(var i = 1; i < 20; i++) {
+            p+='x'
+            console.log(p)
+        } 
+    
+    </script>
+</body>
+</html>

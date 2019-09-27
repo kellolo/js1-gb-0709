@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let john = {
+            age: 20,
+            married: false,
+            occupation: 'student',
+            goStudy: function (time) {
+                console.log ('John goes to school and lessons last for ' + time + ' hrs' )
+            }
+        }
+
+        john.age // 20 - Свойство
+        john.goStudy (6) // МЕТОД
+
+
+
+        john ['age'] === john.age // true ( 20 === 20 )
+        // let arr = [1, 2, 3]
+        // arr.length - СВОЙСТВО
+        // arr.push () - МЕТОД
+        // let obj = {
+        //     0: 1,
+        //     1: 2,
+        //     2: 3
+        // }
+
+        // obj [1] >>> obj ['1']
+    </script>
+</body>
+</html>
