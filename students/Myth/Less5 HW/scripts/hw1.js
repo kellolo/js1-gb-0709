@@ -21,6 +21,7 @@ function createChessDesk() {
         mainTable.appendChild(block)
     }
 
+
     for (let i = 0; i <=8; i++){
         if (i === 0){
             createBlock('','white', '')
@@ -28,12 +29,11 @@ function createChessDesk() {
                 createBlock(String.fromCodePoint(i),'white', '')
             }
         }
-        else if (i % 2 ===0) {
+        else if (i % 2 === 0) {
             createBlock(i, 'white', '')
             for (let i = 0; i < 4; i++) {
                 createBlock()
                 createBlock(' ', 'black')
-
             }
         }
         else {
