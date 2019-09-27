@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dest {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+ .block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+} 
