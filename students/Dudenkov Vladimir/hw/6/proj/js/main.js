@@ -1,9 +1,9 @@
 // реляционные базы данных
 // СУБД
 
-const items = ['Notebook', 'Display', 'Keyboard', 'Mouse', 'Phones', 'Microphone']
-const prices = [1000, 200, 20, 10, 25, 10]
-const ids = [1, 2, 3, 4, 5, 6]
+const items = ['E-Bike', 'Control', 'Accum', 'PC', 'Motor']
+const prices = [1000, 100, 500, 70, 150]
+const ids = [1, 2, 3, 4, 5]
 
 
 function createProduct (index) {
@@ -36,7 +36,9 @@ btnCart.addEventListener ('click', function () {
     document.querySelector ('.cart-block').classList.toggle ('invisible')
 })
 
-let btnProduct = document.querySelector('.btn-prod')
+let test
+
+let btnProduct = document.querySelector('.buy-btn')
 btnProduct.addEventListener('click', function () {
-    document.querySelector ('.prod-block').classList.toggle ('invisible')
+    test = createProduct(1)
 })
