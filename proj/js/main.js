@@ -29,3 +29,9 @@ function calcSum (cart) {
     })
     return sum
 }
+
+let btnCart = document.querySelector ('.btn-cart')
+
+btnCart.addEventListener ('click', function () {
+    document.querySelector ('.cart-block').classList.toggle ('invisible')
+})
