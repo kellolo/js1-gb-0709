@@ -1,20 +1,16 @@
 
-let items =[
-    {id:1, name:"Жеванный крот1", price:10, quantity:1},
-    {id:2, name:"Жеванный крот2", price:10, quantity:2},
-    {id:3, name:"Жеванный крот3", price:10, quantity:1},
-    {id:4, name:"Жеванный крот4", price:10, quantity:1},
-    {id:5, name:"Жеванный крот5", price:10, quantity:1},
-    {id:6, name:"Жеванный крот6", price:10, quantity:1},
-]
+let items =[]
 
+for (let i = 1; i <= 10; i++){
+    items.push({id:`${i}`, name:`Жеванный крот${i}`, price:10*`${i}`, quantity:`${i}`})
+}
 
 let Basket = {
     userBasket: [],
 
-    createBasket(input_json) {
-        for (let i in input_json) {
-            this.userBasket.push(input_json[i])
+    createBasket(input_data) {
+        for (let i in input_data) {
+            this.userBasket.push(input_data[i])
         }
         return this.userBasket
     },
