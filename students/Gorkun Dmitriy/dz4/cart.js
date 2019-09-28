@@ -9,7 +9,6 @@ let cart = {
         return sum
     },
     addProduct (product) {
-        product.count = 1
         current_product = this.products.find(item => item.id == product.id)
         if (current_product) current_product.count++
         else this.products.push(product)
@@ -21,6 +20,7 @@ function Product(_id, _name, _category, _price) {
     this.name = _name
     this.category = _category
     this.price = _price
+    this.count = 1
 }
 
 function createProducts() {
