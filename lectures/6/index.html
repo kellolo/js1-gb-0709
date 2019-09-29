@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="my-btn" onclick="clicked ()">Click me</button>  -->
+    <button id="my-btn">Click me</button> 
+    <p id="target"></p>
+
+    <script>
+        //EVENTS
+        
+        //1 - инлайн обработчики событий
+        //2 - навешивание событий через свойства объекта, вызывающего событие
+
+        //3 - addEventListener
+
+        // console.dir (document.querySelector ('#my-btn'))
+        let btn = document.querySelector ('#my-btn')
+        // //btn.onclick = clicked   //без скобок
+
+        // function clicked () {
+        //     document.querySelector ('#target').innerText = 'Button clicked'
+        // }
+
+
+        // btn.addEventListener ('click', function () {
+        //     console.log ('firt event')
+        // })
+
+        // btn.addEventListener ('click', clicked)
+
+        //Элемент вызывающий событие
+        // событие - EVENT (evt, e)
+        // document.addEventListener ('keypress', function (e) {
+        //     console.log (e.key)
+        // })
+
+        document.addEventListener ('click', function (e) {
+            console.log (e)
+        })
+    </script>
+</body>
+</html>
