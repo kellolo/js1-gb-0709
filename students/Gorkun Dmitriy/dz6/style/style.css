@@ -70,6 +70,8 @@ img {
     position: relative;
 }
 .cart-block{
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
     border-radius: 5px;
     box-sizing: border-box;
