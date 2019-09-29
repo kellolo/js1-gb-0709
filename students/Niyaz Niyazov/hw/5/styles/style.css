@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+#content img {
+    margin-left: 17px;
+}
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+
+* {box-sizing: border-box}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.inputs {
+    margin-bottom: 25px;
+    color: #dcdcdc;
+    font-size: 80%;
+    text-align: left;
+    padding-left: 10px;
+
+}
+button{
+    padding: 10px;
+    margin-inline-start: 112px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+#main_div {
+    border: 1px;
+    border-style: solid;
+    border-color: coral;
+    height: 100%;
+    width: 100%;
+    padding-left: 230px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+th, td, tr, col {
+    padding: 5px;
+    margin: 15px;
+    text-align: center;
+  }
+
+td.cell {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid rgba(12, 14, 10, 0.9);
+    border-collapse: collapse;
+}
+
+

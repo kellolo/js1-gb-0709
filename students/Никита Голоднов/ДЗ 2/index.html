@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Дан код:
+        //     var a = 1, b = 1, c, d;
+        //     c = ++a; alert(c);           // 2 
+        // Потому что, в данном варианте ++1 считается сразу и выводится
+        //     d = b++; alert(d);           // 1
+        // А в данном варианте, сначала выводится 1, а считается уже после
+        //     c = (2+ ++a); alert(c);      // 5
+        // Поскольку, в предыдущем примере мы уже увеличили "а" до 2х, то в данном случае выражение имеет вид 2 + 3 = 5
+        //     d = (2+ b++); alert(d);      // 4
+        // Как мы уже поняли, постфиксная форма выводится сразу, поэтому в данном случае выражение имеет вид 2 + 2 = 4, а уже после подсчета 2 + 3 
+        //     alert(a);                    // 3
+        // Потому что "а" увеличивалось на единицу 2 раза
+        //     alert(b);                    // 3
+        // Потому что "b" так же увеличивалось на единицу 2 раза, но результат этого увеличения выводится при следующем вызове переменной
+        // Почему код даёт именно такие результаты?
+        //2. Чему будет равен x в примере ниже?
+        var a = 2;
+        var x = 1 + (a *= 2); // a = a * 2 = 4
+        console.log (x)
+        //3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения.
+        a = 42;
+        var b = 69;
+        if (a >= 0 && b >= 0) 
+            console.log(a-b)
+         else if (a < 0 && b < 0) 
+            console.log(a*b)
+         else 
+            console.log(a+b)
+        
+        //4.
+        
+        a = +prompt('Введите число от 0 до 15')
+        var sum = ''
+
+        switch (a){
+            case 0:
+                console.log(a++)
+            case 1:
+                console.log(a++)
+            case 2:
+                console.log(a++)
+            case 3:
+                sum += a++ + ' ';
+            case 4:
+                sum += a++ + ' ';
+            case 5:
+                sum += a++ + ' ';
+            case 6:
+                sum += a++ + ' ';
+            case 7:
+                sum += a++ + ' ';
+            case 8:
+                sum += a++ + ' ';
+            case 9:
+                sum += a++ + ' ';
+            case 10:
+                sum += a++ + ' ';
+            case 11:
+                sum += a++ + ' ';
+            case 12:
+                sum += a++ + ' ';
+            case 13:
+                sum += a++ + ' ';
+            case 14:
+                sum += a++ + ' ';
+            case 15:
+                sum += a++ + ' ';
+                break;
+            default:
+                console.log('Проверьте правильность ввода данных')
+        } 
+        console.log(sum)
+
+
+        //5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+        
+        function plus (a, b) {
+            return a + b
+        }
+        function minus (a, b) {
+            return a - b
+        }
+        function divide (a, b) {
+            return a / b
+        }
+        function multiply (a, b) {
+            return a * b
+        }
+  
+        //6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. 
+        // В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
+        
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return plus(arg1, arg2);
+                case "-":
+                    return minus(arg1, arg2);
+                case "/":
+                    return divide(arg1, arg2);
+                case "*":
+                    return multiply(arg1, arg2);
+                default:
+                    return "Проверьте правильность ввода данных!";
+            }
+        }
+        var arg1 = +prompt("Введите число:");
+        var arg2 = +prompt("Введите число:");
+        var operation = prompt('Введите необходимую операцию "+", "-", "*", "/"');
+        console.log(mathOperation(arg1, arg2, operation));
+
+        // ### 7) *Сравнить null и 0. Попробуйте объяснить результат. 
+        null == 0 // false, потому что "0" - это число, а null это - прям совсем ничего
+        
+        //### 8) *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+        function power(val, pow) {
+            if (pow > 0) {
+            return val * power(val, pow - 1);
+        } else if (pow < 0) {
+            return val * power(val, pow + 1);
+        } else
+            return 1;       
+        }
+        console.log(power(2, 3));
+     
+    </script>   
+</body>
+</html> 

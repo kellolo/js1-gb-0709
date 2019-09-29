@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework2</title>
+</head>
+<body>
+</body>
+<script>
+    //Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
+    //если a и b положительные, вывести их разность;
+    // если а и b отрицательные, вывести их произведение;
+    // если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+    console.log('Задание 3')
+     var a=+prompt ('Введите число a')
+     var b=+prompt ('Введите число b')
+     if (a>=0 && b>=0) {
+         result = a-b;
+         console.log ('Вы ввели положительные числа, результат=', result );
+     } else if ( a<0 && b<0) {
+         result= a*b;
+         console.log ('Вы ввели Отрицательные числа, результат=', result );
+     } else if ((a>=0 && b<=0) || (a<=0 && b>=0)) {
+        result= a+b;
+         console.log ('Вы ввели числа с разными знаками, результат=', result );
+     } else {
+         console.log ('Введите правильные значения!')
+     }
+
+     // Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+     console.log('Задание 4')
+     var a= +prompt ('Введите число из промежутка [0,15]:')
+     var sum = "";
+
+switch (a) {
+    case 0:
+        sum += a++ + " ";
+    case 1:
+        sum += a++ + " ";
+    case 2:
+        sum += a++ + " ";
+    case 3:
+        sum += a++ + " ";
+    case 4:
+        sum += a++ + " ";
+    case 5:
+        sum += a++ + " ";
+    case 6:
+        sum += a++ + " ";
+    case 7:
+        sum += a++ + " ";
+    case 8:
+        sum += a++ + " ";
+    case 9:
+        sum += a++ + " ";
+    case 10:
+        sum += a++ + " ";
+    case 11:
+        sum += a++ + " ";
+    case 12:
+        sum += a++ + " ";
+    case 13:
+        sum += a++ + " ";
+    case 14:
+        sum += a++ + " ";
+    case 15:
+        sum += a++ + " ";
+        break;
+    default:
+        console.log("Проверьте правильность ввода данных");
+}
+console.log(sum);
+//Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return. 
+console.log('Задание 5')
+    function add(arg1, arg2) {
+         return a + b 
+         }
+    function sub(arg1, arg2) { 
+        return a - b
+         }
+    function mult(arg1, arg2) { 
+        return a * b 
+        }
+    function div(arg1, arg2) {
+         return a / b 
+         }
+         console.log ('Результат операции сложения:', add(10,10))
+         console.log ('Результат операции вычитатия:', sub(10,10))
+         console.log ('Результат операции умножения:', mult(10,10))
+         console.log ('Результат операции деления:', div(10,10))
+
+        //Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), 
+        //где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+        // В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3)
+        // и вернуть полученное значение (использовать switch). 
+        console.log('Задание 6')
+        var a = +prompt('Введите a')
+        var b = +prompt('Введите b')
+        var operation = prompt('Введите математическую операцию +, -, * or /')
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    return add(arg1, arg2)
+                case '-':
+                    return sub(arg1, arg2)
+                case '*':
+                    return mult(arg1, arg2)
+                case '/':
+                    return div(arg1, arg2)
+                default:
+                    console.log('Введите правильное значение')
+            }
+        }
+        console.log('result = ', mathOperation(a, b, operation))
+
+
+        //*Сравнить null и 0. Попробуйте объяснить результат
+        console.log ('Задание 7')
+        console.log (null==0)// При всех сравнениях значения может быть только 0, null может быть равен только undefined
+
+        //С помощью рекурсии организовать функцию
+        //возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.  
+ 
+        console.log('Задание 8')
+        var val = +prompt('Введите число')
+        var pow= +prompt('Введите степень числа')
+        function power(val, pow) {
+            if (pow == 0)
+             return 1;
+            else 
+                return val * power(val, pow - 1);
+        }
+        console.log(power(val, pow))
+</script>
+</html>

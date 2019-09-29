@@ -1,0 +1,47 @@
+        
+        .blockChess {
+            display: flex;
+            flex-flow: row wrap;
+            width: 702px;
+            height: 700px;
+        }
+
+        .blockFigure {
+            display: inline-block;
+            overflow: hidden;
+            text-align: center;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            font-size: 14px;
+        }
+
+        .blackFigure {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            background-color: black;
+        }
+
+        .whiteFigure {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            background-color: white;
+        }
+
+        .blockChess div:nth-child(n+12):nth-child(-n+19){
+            border-top: 1px solid black;
+        }
+        .blockChess div:nth-child(n+82):nth-child(-n+89){
+            border-bottom: 1px solid black;
+        }
+        .blockChess div:nth-child(n+10):nth-child(-10n+89){
+            border-right: 1px solid black;
+        }
+        .blockChess div:nth-child(n+12):nth-child(-10n+82){
+            border-left: 1px solid black;
+        }
+            
+
+                    

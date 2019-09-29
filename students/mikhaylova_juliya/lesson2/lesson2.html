@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ЗАДАНИЕ №1
+
+        var a = 1,
+            b = 1,
+            c, d;
+        c = ++a;
+        alert(c); // 2 - инкремент находится перед переменной (сначала прибавляет единицу, а затем возвращает)
+
+        d = b++;
+        alert(d); // 1 - инкремент находися после (сначала возвращает, а затем увеличивает)
+
+        c = (2 + ++a);
+        alert(c); // 5 - (a) уже равно 2, при сложении в этом примере происходит увеличение еще на 1, 2+3=5
+
+        d = (2 + b++);
+        alert(d); // 4 - (b) сохранено со значением 2 (так как после возвращения значения, b увеличилось на единицу) 
+        // и так как инкремент находится после, по b равно 2, 2+2=4
+
+        alert(a); // 3 - (а) два раза увеличивалось на единицу, следовательно сохранено со значением 3
+
+        alert(b); // 3 - (b) в последней операции было равно 2, но сохранено со значением 3 из-за увеличения 
+        //на единицу после возвращения значения
+
+
+
+        //ЗАДАНИЕ №2
+
+        var a = 2;
+        var x = 1 + (a *= 2);
+
+        // x = 1 + (2 * 2), то есть равен 5
+
+
+
+
+        //ЗАДАНИЕ №3
+
+        var a = 3;
+        var b = 0;
+
+        if (a >= 0 && b >= 0) {
+            console.log(a - b);
+        } else if (a < 0 && b < 0) {
+            console.log(a * b);
+        } else if (a >= 0 && b < 0 || a < 0 && b >= 0) {
+            console.log(a + b);
+        }
+
+
+
+        //ЗАДАНИЕ №4
+
+        var a = Math.round(Math.random() * (15 - 1) + 1);
+
+        switch (a) {
+            case 1:
+                console.log(a++);
+            case 2:
+                console.log(a++);
+            case 3:
+                console.log(a++);
+            case 4:
+                console.log(a++);
+            case 5:
+                console.log(a++);
+            case 6:
+                console.log(a++);
+            case 7:
+                console.log(a++);
+            case 8:
+                console.log(a++);
+            case 9:
+                console.log(a++);
+            case 10:
+                console.log(a++);
+            case 11:
+                console.log(a++);
+            case 12:
+                console.log(a++);
+            case 13:
+                console.log(a++);
+            case 14:
+                console.log(a++);
+            case 15:
+                console.log(a++);
+
+        }
+
+
+        //ЗАДАНИЕ №5-6
+
+        function summ(a, b) {
+            return a + b
+        }
+
+        function subtract(a, b) {
+            return a - b
+        }
+
+        function multiplic(a, b) {
+            return a * b
+        }
+
+        function division(a, b) {
+            if (b === 0) {
+                return 'sorry, can not do that'
+            }
+            return a / b
+        }
+
+        function mathOperation(a, b, operation) {
+            switch (operation) {
+                case "сложение":
+                    console.log(summ(a, b));
+                    break;
+
+                case "вычитание":
+                    console.log(subtract(a, b));
+                    break;
+
+                case "умножение":
+                    console.log(multiplic(a, b));
+                    break;
+
+                case "деление":
+                    console.log(division(a, b));
+                    break;
+            }
+        }
+
+        //ЗАДАНИЕ №7
+
+        //при сравнении null и 0, получается что в двух случаях (null >= 0 и null <= 0) данное сравнение является истинным.
+        //насколько я поняла это особенность js, связанная с конвертацией типов при сравнении
+        //примерно тоже самое, что 1=='1', только в нашем случае (наверно) null конвертируется в 0 именно при этих операторах...
+        //короче говоря null != 0
+
+
+        //ЗАДАНИЕ №8
+
+        function power(val, pow) {
+            if (pow == 1) {
+                return val;
+            }
+            return val * power(val, pow - 1);
+        }
+    </script>
+</body>
+
+</html>
