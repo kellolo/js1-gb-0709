@@ -1,23 +1,11 @@
 // массив data создается в файле data.js
 
 // создаем корзину
-let basket = []
-
-// создаем функцию добавления элементов в корзину
-
-function addItemsToBasket(item) {
-    basket.push(item)
-}
-
-// добавляем элементы в корзину
-for (let i = 0; i < data.length; i++) {
-    addItemsToBasket(data[i])
-}
-
+let cart = []
 
 // считаем тотал корзины
 
-function countBascketPrice(arr) {
+function countCartPrice(arr) {
     var summ = 0;
     for (var i = 0; i < arr.length; i++) {
         summ += arr[i].price;
@@ -48,14 +36,32 @@ function createProduct() {
         <div class="product-desc">
             <h2 class="product-name">${data[i].name}</h2>
             <p class="product-price">${data[i].price} &#36;</p>
-            <button class="product-btn">Купить</button>
+            <button id=${data[i].id} class="product-btn" onclick="addItemToCart(this)" >Купить</button>
         </div>
     </div>`
     }
-    console.log(htmlStr)
-    console.log(elem)
     elem.innerHTML = htmlStr
 
 }
 
 createProduct()
+
+
+//добавление элементов в корзину и подсчет тотала
+
+function addItemToCart(clickedItem) {
+    document.querySelector('.cart-block').classList.remove('invisible')
+
+    let id = +clickedItem.id
+    let obj = data.find(el => el.id === id)
+    let elem = document.querySelector('.cart-list')
+    elem.innerHTML += `<li class="cart-item">${obj.name} цена: ${obj.price} &#36;</li>`
+
+
+    //подсчет тотала 
+    cart.push(obj)
+    let total = (countCartPrice(cart))
+    let totalEl = document.querySelector('.total')
+    totalEl.innerHTML = `<p class="cart-total-price"> Итого: ${total} &#36;</p>`
+
+}
