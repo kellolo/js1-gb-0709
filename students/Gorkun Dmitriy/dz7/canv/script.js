@@ -3,6 +3,8 @@ const canvas = doc.querySelector('#canv')
 const ctx = canvas.getContext('2d')
 const xCoordBlock = doc.querySelector('#x-coord')
 const yCoordBlock = doc.querySelector('#y-coord')
+const clearButton = doc.querySelector('.clear-button')
+const downloadButton = doc.querySelector('.download-button')
 
 
 const system = {
@@ -48,11 +50,13 @@ function startDraw(evt) {
         if (system.currentTool === 'brush') {
             drawBrush(evt)
         }
-        else if (system.currentTool === 'line') {
+        else if (system.currentTool === 'slinky') {
             drawLine(evt)
         }
         else if (system.currentTool === 'circle') {
-            drawCircle(evt)
+            drawCircle()
+        } else if (system.currentTool === 'polygon') {
+            drawPolygon()
         }
 
     } else {
@@ -74,11 +78,20 @@ function drawBrush(evt) {
 
 
 // рисуем круг
-function drawCircle(evt) {
-    canvas.onmousemove = function (evt) {
-        ctx.fillStyle = system.currentColor
-        ctx.arc(x, y, system.brushSize, 0, 2*Math.PI, false);
-    }
+function drawCircle() {
+    ctx.fillStyle = system.currentColor
+    radius = system.brushSize
+    ctx.beginPath()
+    ctx.arc(x,y,radius,0,2*Math.PI)
+    ctx.closePath()
+    ctx.fill();      
+
+}
+
+// рисуем полигон
+function drawPolygon() {
+    ctx.arc(x,y,2,0,2*Math.PI)
+    ctx.fill();
 }
 
 // рисуем кривую 
@@ -94,13 +107,37 @@ function drawLine (evt) {
     }
 }
 
+// очищаем полотно
+function clearCanvas () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// сохраняем картинку
+
+download_img = function(el) {
+    // get image URI from canvas object
+    var imageURI = canvas.toDataURL("image/jpg");
+    el.href = imageURI;
+  };
+
+
 //listeners
 
 doc.addEventListener('input', inputer)
 doc.addEventListener('click', clicker)
+clearButton.addEventListener('click', clearCanvas)
 
 canvas.addEventListener('mousemove', getCoordinates)
 canvas.addEventListener('mousedown', startDraw)
 canvas.addEventListener('mouseup', endDraw)
-ctx.fillStyle = '#f0f'
-ctx.arc(100,75,50,0*Math.PI,1.5*Math.PI)
+
+
+
+// var ox = canvas.width / 2;
+// var oy = canvas.height / 2;
+// ctx.font = "42px serif";
+// ctx.textAlign = "center";
+// ctx.textBaseline = "middle";
+// ctx.fillStyle = "#800";
+// ctx.fillRect(ox / 2, oy / 2, ox, oy);
+
