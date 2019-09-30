@@ -118,6 +118,21 @@ button:focus {
 
 }
 
+
+.delete-btn {
+    background-image: url(../images/trash-alt-solid.svg);
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    border: transparent;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

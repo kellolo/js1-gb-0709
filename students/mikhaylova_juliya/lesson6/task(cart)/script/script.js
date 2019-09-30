@@ -3,6 +3,9 @@
 // создаем корзину
 let cart = []
 
+// создаем id для корзины (порядковый номер)
+let cartId = 0
+
 // считаем тотал корзины
 
 function countCartPrice(arr) {
@@ -15,7 +18,6 @@ function countCartPrice(arr) {
 }
 
 // добавление события показа корзины
-
 let btnCart = document.querySelector('.btn-cart')
 
 btnCart.addEventListener('click', function () {
@@ -53,9 +55,17 @@ function addItemToCart(clickedItem) {
     document.querySelector('.cart-block').classList.remove('invisible')
 
     let id = +clickedItem.id
-    let obj = data.find(el => el.id === id)
+
+    // находим объект и создает копию
+    let obj = {
+        ...data.find(el => el.id === id)
+    }
+
+    //добавляем порядковый номер к товару в корзине
+    obj.cartId = cartId;
+
     let elem = document.querySelector('.cart-list')
-    elem.innerHTML += `<li class="cart-item">${obj.name} цена: ${obj.price} &#36;</li>`
+    elem.innerHTML += `<li class="cart-item">${obj.name} цена: ${obj.price} &#36;<button class="delete-btn" id=${obj.cartId} onclick="deleteItem(this)"></button> </li>`
 
 
     //подсчет тотала 
@@ -63,5 +73,24 @@ function addItemToCart(clickedItem) {
     let total = (countCartPrice(cart))
     let totalEl = document.querySelector('.total')
     totalEl.innerHTML = `<p class="cart-total-price"> Итого: ${total} &#36;</p>`
+    cartId++
 
+}
+
+//удаление товара из корзины
+
+function deleteItem(elToDelete) {
+    // получаем id удаленного товара при клике на delete
+    let objId = +elToDelete.id
+
+    // удаляем из массива корзины по cartId
+    cart = cart.filter((item) => item.cartId !== objId)
+
+    // пересчитываем тотал и отрисовываем его
+    let total = (countCartPrice(cart))
+    let totalEl = document.querySelector('.total')
+    totalEl.innerHTML = `<p class="cart-total-price"> Итого: ${total} &#36;</p>`
+
+    // удаляем товар из дома
+    elToDelete.parentElement.remove()
 }
