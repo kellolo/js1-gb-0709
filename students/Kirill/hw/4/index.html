@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/script.js"></script>
+    <title>Практическое задание после четвёртой лекции</title>
+</head>
+<body>
+    <header>
+        <a href="../3/index.html">Предыдущее задание</a>&nbsp;<a href="../5/index.html">Следующее задание</a>
+        <h1>Практические задания после четвёртой лекции</h1>
+    </header>
+    <main>
+        <section>
+            <h3>Задание 1:</h3>
+            <p>Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект,
+                в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий объект:
+                {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log
+                и вернуть пустой объект.</p>
+            <h3>Решение:</h3>
+            <pre>
+                    let number = [...prompt (`Введите число от 0 до 999`)];
+
+                    if (number.length >= 4) {
+                        console.log(`Число больше 999`);
+                    } else {
+                        while (number.length < 3) {
+                            number.unshift(0);
+                        }
+                
+                        let objectFromNumbers = {
+                            единицы: +number[2],
+                            десятки: +number[1],
+                            сотни: +number[0]
+                        };
+                
+                        console.log(objectFromNumbers);
+                    }
+            </pre>
+        </section>
+        <section>
+            <h3>Задание 2:</h3>
+            <p>Начать прорабатывать корзину (с 3й методички)</p>
+            <h3>Решение:</h3>
+            <pre>
+                    const items = ['Notebook', 'Display', 'Keyboard', 'Mouse', 'Phones', 'Microphone']
+                    const prices = [1000, 200, 20, 10, 25, 10]
+                    const ids = [1, 2, 3, 4, 5, 6]
+                    
+                    
+                    function createProduct (index) {
+                        return {
+                            id: index,
+                            name: items [index],
+                            price: prices [index]
+                        }
+                    }
+                    
+                    function createDTO () {
+                        let arr = []
+                        for (let i = 0; i < ids.length; i++) {
+                            arr.push (createProduct(i))
+                        }
+                        return arr
+                    }
+                    
+                    function calcSum (cart) {
+                        let sum = 0
+                        cart.forEach(el => {
+                            sum += el.price
+                        })
+                        return sum
+                    }
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Практическое задание после пятой лекции</title>
+</head>
+<body>
+    <header>
+        <a href="../4/index.html">Предыдущее задание</a>
+        <h1>Практические задания после пятой лекции</h1>
+    </header>
+    <main>
+        <section>
+            <h3>Задание 1:</h3>
+            <p>
+                Создать функцию, генерирующую шахматную доску. При этом можно использовать любые html-теги по своему желанию. 
+                Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые ячейки. 
+                Строки должны нумероваться числами от 1 до 8, столбцы – латинскими буквами A, B, C, D, E, F, G, H.
+            </p>
+            <h3>Решение:</h3>
+            <pre>
+                    function drawChessField (size, color1, color2) {
+                        let table = document.createElement(`table`);
+                        let letters = ['','A','B','C','D','E','F','G','H',''];
+    
+                        for (let i = 0, k = 9; i < letters.length; i++, k--) {
+                            let newRow = table.insertRow(i);
+                            for (let j = 0; j < letters.length; j++) {
+                                let newCell = newRow.insertCell(j);
+                                newCell.setAttribute('width', `${size}px`);
+                                newCell.setAttribute('height', `${size}px`);
+    
+                                switch(i) {
+                                    case 0:
+                                    case 9:
+                                        newCell.innerText = letters [j];
+                                        break;
+                                    default:
+                                        if ( j === 0 || j === 9 ) {
+                                            newCell.innerHTML = k;
+                                        } else {
+                                            ( j % 2 == 0 && i % 2 == 0 || j % 2 == 1 && i % 2 == 1) ?
+                                            newCell.setAttribute('style', `background-color: ${color1}`) : newCell.setAttribute('style', `background-color: ${color2}`)
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                        document.body.appendChild(table);
+                    };
+    
+                    drawChessField(40, 'white', 'black');
+            </pre>
+        </section>
+        <section>
+            <h3>Задание 2:</h3>
+            <p>
+                Заполнить созданную таблицу буквами, отвечающими за шахматную фигуру, например К – король, Ф – ферзь и т.п.,
+                причем все фигуры должны стоять на своих местах и быть соответственно черными и белыми.
+            </p>
+            <h3>Решение:</h3>
+            <pre>
+                    function drawChessField (size = 40) {
+                        let table = document.createElement(`table`);
+                        const letters = ['','A','B','C','D','E','F','G','H',''];
+                        const blacksNearChessmenСells = ['8', 'Л(ч)', 'К(ч)', 'С(ч)', 'Ф(ч)', 'Кр(ч)', 'С(ч)', 'К(ч)', 'Л(ч)', '8'];
+                        const blacksFartherChessmenCells = ['7', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', 'п(ч)', '7'];
+                        const whitesNearChessmenCells = ['1', 'Л(б)', 'К(б)', 'С(б)', 'Ф(б)', 'Кр(б)', 'С(б)', 'К(б)', 'Л(б)', '1'];
+                        const whitesFartherChessmenCells = ['2', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', 'п(б)', '2'];
+                    
+                        for (let i = 0, k = 9; i < letters.length; i++, k--) {
+                            let newRow = table.insertRow(i);
+                            for (let j = 0; j < letters.length; j++) {
+                                let newCell = newRow.insertCell(j);
+                                newCell.setAttribute('width', `${size}px`);
+                                newCell.setAttribute('height', `${size}px`);
+                    
+                                switch(i) {
+                                    case 0:
+                                    case 9:
+                                        newCell.innerText = letters [j];
+                                        newCell.classList.add('legend-cell');
+                                        break;
+                                    case 1:
+                                        newCell.innerHTML = blacksNearChessmenСells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    case 2:
+                                        newCell.innerHTML = blacksFartherChessmenCells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    case 7:
+                                        newCell.innerHTML = whitesFartherChessmenCells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    case 8:
+                                        newCell.innerHTML = whitesNearChessmenCells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    default:
+                                        if ( j === 0 || j === 9 ) {
+                                            newCell.innerHTML = k;
+                                            newCell.classList.add('legend-cell');
+                                        } else {
+                                            ( j % 2 == 0 && i % 2 == 0 || j % 2 == 1 && i % 2 == 1) ?
+                                            newCell.classList.add('white-cell') : newCell.classList.add('black-cell')
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                        document.body.appendChild(table);
+                    }
+
+                    drawChessField ();
+            </pre>
+        </section>
+        <section>
+            <h3>Задание 3:</h3>
+            <p>Заменить буквы, обозначающие фигуры картинками.</p>
+            <h3>Решение:</h3>
+            <pre>
+                    function drawChessField (size = 40) {
+                        let table = document.createElement(`table`);
+                        const letters = ['','A','B','C','D','E','F','G','H',''];
+                        const blacksNearChessmenСells = ['8','&#9820;','&#9822;','&#9821;','&#9819;','&#9818;','&#9821;','&#9822;','&#9820;','8'];
+                        const blacksFartherChessmenCells = ['7','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','7'];
+                        const whitesNearChessmenCells = ['1','&#9814;','&#9816;','&#9815;','&#9813;','&#9812;','&#9815;','&#9816;','&#9814;','1'];
+                        const whitesFartherChessmenCells = ['2','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','2'];
+                    
+                        for (let i = 0, k = 9; i < letters.length; i++, k--) {
+                            let newRow = table.insertRow(i);
+                            for (let j = 0; j < letters.length; j++) {
+                                let newCell = newRow.insertCell(j);
+                                newCell.setAttribute('width', `${size}px`);
+                                newCell.setAttribute('height', `${size}px`);
+                    
+                                switch(i) {
+                                    case 0:
+                                    case 9:
+                                        newCell.innerText = letters [j];
+                                        newCell.classList.add('legend-cell');
+                                        break;
+                                    case 1:
+                                        newCell.innerHTML = blacksNearChessmenСells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    case 2:
+                                        newCell.innerHTML = blacksFartherChessmenCells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    case 7:
+                                        newCell.innerHTML = whitesFartherChessmenCells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 1) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    case 8:
+                                        newCell.innerHTML = whitesNearChessmenCells [j];
+                                        (j == 0 || j == 9) ? newCell.classList.add('legend-cell') : (j % 2 == 0) ? newCell.classList.add('white-cell') : newCell.classList.add('black-cell');
+                                        break;
+                                    default:
+                                        if ( j === 0 || j === 9 ) {
+                                            newCell.innerHTML = k;
+                                            newCell.classList.add('legend-cell');
+                                        } else {
+                                            ( j % 2 == 0 && i % 2 == 0 || j % 2 == 1 && i % 2 == 1) ?
+                                            newCell.classList.add('white-cell') : newCell.classList.add('black-cell')
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                        document.body.appendChild(table);
+                    }
+
+                    drawChessField ();
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

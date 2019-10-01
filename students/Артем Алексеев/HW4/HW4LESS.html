@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //задание 1
+       
+       var a = +prompt('введите число от 0 до 999') // + потому что в задание сказано именно число
+       
+       number(a)
+       
+       function number (num){
+           
+           var arr = num.toString().split('')
+           var obj = {}
+           
+           if(num > 999){
+               console.log('введите число от 0 до 999')
+               
+           }else if(num > 99 && num < 1000){
+                              
+               obj.units = arr[2]
+               obj.decades = arr[1]
+               obj.hundreds = arr[0]   
+                                 
+           }else if(num >= 10 && num <100){
+                             
+               arr.unshift(0)
+               obj.units = arr[2]
+               obj.decades = arr[1]
+               obj.hundreds = arr[0]   
+                                            
+           }else if(num >= 0 && num < 10){
+               
+               arr.unshift(0)
+               arr.unshift(0)
+               obj.units = arr[2]
+               obj.decades = arr[1]
+               obj.hundreds = arr[0]   
+               
+           }
+           
+           console.log(obj)
+       }
+       
+    
+    
+    </script>
+    
+    <script>
+        
+    //задание 2    
+    // не совсем понял как делать, если честно   
+    // сделал массив из объектов (предполагаемых товаров в корзине) с их свойствами и посчитал общую сумму    
+        var array = [
+           obj1 = {
+               mark: 'bmw',
+               color: 'black',
+               price: 100
+           },
+           obj2 = {
+               mark: 'audi',
+               color: 'green',
+               price: 150
+           
+           }
+       ]
+       
+       function numbers (){
+           var num = 0
+           for(var i = 0; i <= array.length; i++){
+               num = i
+               
+           }
+           return num
+       }
+       
+       function sum (y){
+           var x = 0
+           for(var i = 0; i <= y - 1; i++){
+               x = array[i].price + x
+           }
+            return x  
+           
+       }
+       
+       var a = numbers()
+       var b = sum(a)
+       
+       console.log('общая сумма ' + b + ' денег')
+    
+    
+    </script>
+    
+</body>
+</html>

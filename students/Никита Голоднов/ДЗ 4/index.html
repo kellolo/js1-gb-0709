@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//1 задание
+
+        var nubmer = [...prompt('укажите число от 0 до 999')]
+        var obj
+
+        if (+number > 999) {
+            alert('Ошибка')
+        } else {
+            if (number.length < 3){
+                while (number.length < 3) {
+                    number.unshift(0)
+                }
+            }
+            obj = {
+                units: +number[2],
+                decimals: +number[1],
+                hundreds: +number[0]
+            }
+        }
+
+//2 задание
+    var items = ['Товар 1', 'Товар 2', 'Товар 3']
+    var prices = [199, 399, 299]
+    var ids = [1, 2, 3]
+
+    function createProduct(index) {
+        return {
+            id: index,
+            name: items [index],
+            price: prices [index]
+        }
+    }
+    function createDTO() {
+        let arr = []
+        for (let i = 0; i < ids.length; i++) {
+            arr.push (createProduct(i))
+        }
+        return arr
+    }
+
+
+    function countBasketPrice() {
+        let summ = 0
+        
+        cart.forEach(el => {
+            sum += el.price
+        })
+        return sum
+    }
+    </script>
+</body>
+</html>
