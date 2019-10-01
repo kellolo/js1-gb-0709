@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+   <h1>Магазин</h1>
+    <table>
+        <tr>
+            <th>№</th>
+            <th>id</th>
+            <th>Название</th>
+            <th>Категория</th>
+            <th>Цена</th>
+        </tr>
+    </table>
+    <br>
+    <button class="create" onclick="createProduct()">Создать товар</button>
+    <button class="add" onclick="cart.addProduct()">Добавить в корзину</button>
+    <button class="add" onclick="cart.clear()">Очистить корзину</button>
+    <div class="cartCount"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

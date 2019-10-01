@@ -30,7 +30,7 @@ task1Result.innerText = simpleCheck(100);
 function randomCart() {
     result = 0;
     for (let i = 0; i < 10; i++) {
-        cartArray[i] = ['product1', 10 * Math.floor(Math.random() * Math.floor(100))];
+        cartArray[i] = ['product'+ i, 10 * Math.floor(Math.random() * Math.floor(100))];
         cart.innerText += cartArray[i][0] + ": " + cartArray[i][1] + "\n";
         result += cartArray[i][1];
     }
