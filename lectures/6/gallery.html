@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #roulette {
+            display: inline-block
+        }
+        #roulette img {
+            display: inline-block;
+            width: 100px;
+            margin: 5px
+        }
+
+        #wrapper {
+            width: 400px;
+            height: 400px;
+        }
+
+        #wrapper img {
+            height: 380px;
+            margin-bottom: 10px
+        }
+    </style>
+</head>
+<body>
+    <div id="gallery">
+        
+        <div id="wrapper">
+            <img src="gallery/1.jpg" alt="" id="main">
+        </div>
+        
+        <div id="roulette">
+            
+        </div>
+        <button id="left" class="cmd-btn" data-step="-1">left</button><button id="right" class="cmd-btn" data-step="1">right</button>
+    </div>
+    <script>
+        const gallery = document.querySelector ('#gallery')
+        const mainImg = document.querySelector ('#main')
+        const roulette = document.querySelector ('#roulette')
+
+        let counter = 1
+
+        window.onload = function () {
+            let htmlStr = ''
+            for (let i = 1; i <= 8; i++) {
+                htmlStr += `<img src="gallery/${i}.jpg" alt="${i}">`
+                
+                // let icon = document.createElement ('img')
+                // icon.src = `gallery/${i}.jpg`
+                // icon.alt = `изображение хомяка Арсения № ${i}`
+                // roulette.appendChild (icon)
+            }
+            roulette.innerHTML = htmlStr
+        }
+
+        gallery.addEventListener ('click', function (evt) {
+            if (evt.target.tagName === 'IMG' && evt.target.parentElement.id === 'roulette') {
+                //console.dir (evt.target)
+                mainImg.src = evt.target.src
+                counter = +evt.target.alt
+
+            } else if (evt.target.classList.contains ('cmd-btn')) {
+                if (evt.target.id === 'left' && counter === 1) counter = 9
+                if (evt.target.id === 'right' && counter === 8) counter = 0
+                // if (evt.target.id === 'right') counter++
+                mainImg.src = `gallery/${counter += +evt.target.dataset['step']}.jpg`
+            }
+        })
+    </script>
+</body>
+</html>
