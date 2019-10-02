@@ -1,0 +1,20 @@
+#chessDesk{
+    width: 400px;
+    height: 400px;
+  }
+  .whiteBox{
+      background-color: white;
+      width: 50px;
+      height: 50px;
+      outline: 1px solid black;
+      float: left;
+      margin: 0;
+  }
+  .blackBox{
+      background-color: black;
+      width: 50px;
+      height: 50px;
+      outline: 1px solid black;
+      margin: 0;
+      float: left;
+  }
