@@ -1,0 +1,61 @@
+/* .content {
+    width: 1920px;
+    margin: 0 auto;
+}  */
+.gallary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    } 
+    
+    
+    #roulette {
+        /* display: inline-block; */
+        display:flex;
+        width: 100%;
+        justify-content: center;
+        padding: 20px 0 0 0;
+    
+    
+    }
+    #roulette img {
+        display: inline-block;
+        width: 100px;
+        margin: 5px;
+    
+    }
+    
+    .wrap img {
+        height: 380px;
+        margin-bottom: 10px
+    }
+    .buttom-wrap {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 30px;
+    }
+    
+    .button{
+        
+        width: 100px;
+        text-decoration: none;
+        outline: none;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 40px 40px  #BC8F8F inset, 0 0 0 0  #BC8F8F;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: white;
+        transition: .15s ease-in-out;
+        text-transform: uppercase;
+        margin: 0 20px 20px 20px;
+    
+      }
+      .buttons:hover {
+        box-shadow: 0 0 10px 0  #BC8F8F inset, 0 0 10px 4px  #BC8F8F;
+        color:  #BC8F8F;
+      }
+    
