@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Super design canvas</title>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		#canv {
+			width: 1000px; 
+			height: 800px; 
+		}
+	</style>
+</head>
+<body>
+<div class="head"></div>
+
+
+	<div class="canv">
+		<canvas id="canv" width="1000" height="800"></canvas> 
+	</div>
+
+	<div class="tools">
+		<div class="coordinates">
+			<p id="x"><b>x: </b> <span id="x-coord"></span></p>
+			<p id="y"><b>y: </b> <span id="y-coord"></span></p>
+			<br>
+		</div>
+<div class="flex-tools">
+	<button class="tool-button" data-name='brush'>Brush</button>
+		<button class="tool-button" data-name='brush2'>Brush2</button>
+
+		<select id='select-size'>
+			<option>5</option>
+			<option>10</option>
+			<option>15</option>
+			<option>20</option>
+		</select>
+
+		<input type="color" id="select-color">
+	</div>
+</div>
+	
+
+
+	<script src="script.js"></script>
+</body>
+</html>

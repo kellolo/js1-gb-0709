@@ -1,0 +1,27 @@
+*{
+    margin: 0 auto
+}
+body {
+    background-color: black;
+}
+.canv {
+    text-align: center;
+    margin-top: 20px;
+}
+canvas {
+    background-color: white;
+    box-shadow: 0 0 5px 2px white;
+}
+.tools {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.coordinates {
+    color: white;
+    padding-top: 10px;
+}
+.flex-tools {
+    display: flex;
+    align-items: center;
+    padding: 0 620px;
+}
