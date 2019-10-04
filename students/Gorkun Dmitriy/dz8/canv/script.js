@@ -10,7 +10,7 @@ const downloadButton = doc.querySelector('.download-button')
 const system = {
     width: canvas.getAttribute('width'),
     height: canvas.getAttribute('height'),
-    currentTool: '',
+    currentTool: 'brush',
     currentColor: 'black',
     brushSize: 5
 }
@@ -31,6 +31,8 @@ function clicker(evt) {
     // для элементов "инструменты" (tools-button)
     if (evt.target.classList.contains('tool-button')) {
         renderSystem('currentTool', evt.target.dataset['name'])
+        doc.querySelectorAll('.tool-button').forEach (el => el.classList.remove('active-tool'))
+        evt.target.classList.add('active-tool')
     }
 }
 
@@ -49,14 +51,14 @@ function startDraw(evt) {
     if (system.currentTool) {
         if (system.currentTool === 'brush') {
             drawBrush(evt)
-        }
-        else if (system.currentTool === 'slinky') {
+        } else if (system.currentTool === 'slinky') {
             drawLine(evt)
-        }
-        else if (system.currentTool === 'circle') {
+        } else if (system.currentTool === 'circle') {
             drawCircle()
         } else if (system.currentTool === 'polygon') {
             drawPolygon()
+        } else if (system.currentTool === 'eraser') {
+            drawEraser()
         }
 
     } else {
@@ -76,6 +78,14 @@ function drawBrush(evt) {
     }
 }
 
+// ластик
+function drawEraser(evt) {
+    canvas.onmousemove = function (evt) {
+        ctx.fillStyle = 'white'
+        ctx.fillRect(+xCoordBlock.innerText, +yCoordBlock.innerText, system.brushSize, system.brushSize)
+    }
+}
+
 
 // рисуем круг
 function drawCircle() {
@@ -90,18 +100,19 @@ function drawCircle() {
 
 // рисуем полигон
 function drawPolygon() {
+    ctx.fillStyle = system.currentColor
     ctx.arc(x,y,2,0,2*Math.PI)
     ctx.fill();
 }
 
-// рисуем кривую 
+// рисуем карандашом 
 function drawLine (evt) {
     canvas.onmousemove = function (evt) {
         ctx.strokeStyle = system.currentColor
         ctx.lineWidth = system.brushSize;
         ctx.beginPath()
-        ctx.moveTo(x-dx, y-dy)
-        ctx.lineTo(x, y)
+        ctx.moveTo(x, y)
+        ctx.lineTo(x-dx, y-dy)
         ctx.stroke()
         ctx.closePath()
     }
@@ -115,7 +126,7 @@ function clearCanvas () {
 // сохраняем картинку
 
 download_img = function(el) {
-    // get image URI from canvas object
+    // получаем url
     var imageURI = canvas.toDataURL("image/jpg");
     el.href = imageURI;
   };

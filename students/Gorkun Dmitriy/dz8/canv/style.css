@@ -1,0 +1,91 @@
+.main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+button, input {
+    cursor: pointer;
+    outline: none;
+}
+
+.tools {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.tools > * {
+    margin-right: 20px;
+}
+
+.tool-button {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    outline: none;
+    border: outset;
+}
+
+
+
+.active-tool {
+    border: inset;
+}
+
+button[data-name = "brush"] {
+    background-image: url(img/brush.png);
+}
+
+button[data-name = "slinky"] {
+    background-image: url(img/pencil.png);
+}
+
+button[data-name = "circle"] {
+    background-image: url(img/circle.png);
+}
+
+button[data-name = "polygon"] {
+    background-image: url(img/polygon.png);
+}
+
+button[data-name = "eraser"] {
+    background-image: url(img/eraser.png);
+}
+
+.canv {
+    position: relative;
+}
+
+#canv {
+    width: 1000px;
+    height: 800px;
+    border: 15px groove goldenrod;
+}
+
+.coordinates {
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+}
+
+#download {
+    width: 40px;
+    height: 40px;
+    background: url(img/download.png) no-repeat;
+    background-size: cover;
+}
+
+.clear-button {
+    width: 40px;
+    height: 40px;
+    background: url(img/clear.png) no-repeat;
+    background-size: cover;
+    border: none;
+}
+
+input[type="color"] {
+    width: 40px;
+    height: 40px;
+}
