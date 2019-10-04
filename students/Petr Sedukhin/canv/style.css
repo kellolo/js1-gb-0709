@@ -1,0 +1,81 @@
+#canv {
+    width: 800px; 
+    height: 600px; 
+    border: 1px solid black
+}
+
+.content{
+    margin: auto;
+    width: 800px;
+    padding: 20px;
+    background: #afafaf;
+    border-radius: 10px;
+}
+
+.head{
+
+}
+
+.canv{
+    background: white;
+    height: 600px;
+}
+
+.coordinates{
+    float: right;
+    margin-top: 1px;
+}
+
+.coord{
+    display: inline-grid;
+    width: 42px;
+}
+
+p{
+    margin: 0;
+}
+
+.tools{
+    margin-bottom: 10px;
+}
+
+.tools div{
+    display: inline-block;
+	margin-right: 10px;
+}
+
+.tools input[type=radio] {
+	display: none;
+}
+
+.tools label{
+    display: inline-block;
+    cursor: pointer;
+    line-height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    user-select: none;
+    width: 70px;
+    text-align: center;
+    background: #898989;
+}
+ 
+.tools input[type=radio]:checked + label {
+	background: #6bbef1;
+}
+ 
+.tools label:hover {
+    background: #777;
+}
+
+.slt-sz, .slt-cr{
+    position: relative;
+}
+
+.slt-sz{
+    top: 6px;
+}
+
+.slt-cr{
+    top: 3px;
+}

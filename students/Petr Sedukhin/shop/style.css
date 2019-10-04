@@ -63,21 +63,6 @@ img {
     height: auto
 }
 
-.btn-prod{
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all ease-in-out .4s;
-    cursor: pointer;
-}
-
-.btn-prod:hover{
-    border-color: #444444;
-    color: black;
-}
-.btn-prod{
-    align-self: center;
-}
-
 .desc {
     border: 1px solid #c0c0c040;
     padding: 15px
@@ -186,3 +171,15 @@ img {
     border-bottom: 2px solid #fafafa;
 }
 
+.buy-btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
+    cursor: pointer;
+    align-self: center;
+}
+
+.buy-btn:hover{
+    border-color: #444444;
+    color: black;
+}
