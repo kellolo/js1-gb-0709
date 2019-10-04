@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    padding: 30px;
+
+}
+
+
+#canv {
+    width: 1000px;
+    height: 800px;
+    background-color: #fff;
+    border: 10px double #666d9e;
+    outline: 5px solid #292929;
+}
+
+.coordinates {
+    width: 100px;
+}
+
+#x,
+#y {
+    font-size: 20px;
+    color: #000;
+}
+
+.tool-button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: #686868 solid 2px;
+    font-size: 15px;
+    background-color: #d2d2d3;
+    transition: all .3s ease-in;
+}
+
+.tool-button:hover {
+    cursor: pointer;
+    background-color: #666d9e;
+    border: rgb(56, 56, 56) solid 2px;
+
+}
+
+.tools {
+    display: flex;
+    margin-top: 15px;
+}
+
+.btn-box {
+    width: 500px;
+    align-self: center;
+
+}
+
+#select-size {
+    height: 40px;
+    font-size: 15px;
+    background-color: #d2d2d3;
+    margin-right: 15px;
+    transition: all .3s ease-in;
+
+}
+
+#select-size:hover {
+    cursor: pointer;
+    background-color: #666d9e;
+}
+
+#select-color {
+    height: 40px;
+    background-color: #d2d2d3;
+    transition: all .3s ease-in;
+    border-radius: 5px;
+
+}
+
+#select-color:hover {
+    cursor: pointer;
+    background-color: #666d9e;
+}
