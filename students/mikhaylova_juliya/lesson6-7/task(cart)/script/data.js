@@ -14,7 +14,7 @@ const images = ['images/notebook.png',
 
 function createProduct(index) {
   return {
-    id: index,
+    id: ids[index],
     name: items[index],
     price: prices[index],
     img: images[index]

@@ -103,6 +103,36 @@ button:focus {
     display: none;
 }
 
+.cart-list {
+    font-size: 18px;
+}
+
+.cart-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.cart-total-price {
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+
+}
+
+
+.delete-btn {
+    background-image: url(../images/trash-alt-solid.svg);
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    border: transparent;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
