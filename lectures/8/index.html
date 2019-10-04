@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // doSmth === function () {...}
+        // doSmthBad === var === undefined
+        //doSmth() // => result
+        //doSmthBad () // err doSmthBad is not a function
+
+        console.log (doSmth ())
+        //console.log (doSmthBad ())
+
+        function doSmth () {
+            return 4
+        }
+
+        // Анонимные функции
+        var doSmthBad = function () {
+            //window.doSmthBad = null - БАНЗААААЙ!!
+            return 5
+        }
+
+        let arrowFunction = () => {
+            return 6
+        }
+
+        console.log (doSmthBad ())
+
+        let vasya = {
+            name: 'Vasily',
+            age: 19,
+            getOlder: function () {
+                this.age++
+                console.log (`${this.name} стареет и возраст теперь ${this.age}`)
+            },
+            showThis: function() {
+                console.log (this)
+            }
+        }
+
+        let olya = {
+            name: 'Olga',
+            age: 19,
+            getOlder: () => {
+                this.age++
+                console.log (`${this.name} стареет и возраст теперь ${this.age}`)
+            },
+            showThis: () => {
+                console.log (this)
+            }
+        }
+
+        // Замыкания
+
+        function zamyk (a) {
+            return function (b) {
+                return a + b
+            }
+        }
+
+        //zamyk (10) (20) - drop
+
+        let a10 = zamyk (10) 
+        let a20 = zamyk (20)
+
+        let b = 50
+
+        console.log (a10 (b))
+        console.log (a20 (b))
+
+    </script>
+    
+</body>
+</html>
