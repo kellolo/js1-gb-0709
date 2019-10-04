@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <!-- //     1. Создать функцию, генерирующую шахматную доску. 
+// При этом можно использовать любые html-теги по своему желанию. 
+// Доска должна быть разлинована соответствующим образом, т.е. чередовать 
+// черные и белые ячейки. Строки должны нумероваться числами от 1 до 8, 
+// столбцы – латинскими буквами A, B, C, D, E, F, G, H.
+// 2. Заполнить созданную таблицу буквами, отвечающими за шахматную фигуру,
+//  например К – король, Ф – ферзь и т.п., причем все фигуры должны стоять на
+//   своих местах и быть соответственно черными и белыми. 
+// 3. *Заменить буквы, обозначающие фигуры картинками. -->
+  
+
+
+    <script>
+
+    
+    function chessDesk (){
+        let desk = document.createElement ('div')
+        desk.className = 'desk'
+        desk.style.width = '1000 px'
+        desk.style.height = '1000 px'
+        desk.style.margin = '0 auto'
+        // desk.style.display = 'grid'
+        // desk.style.gridTemplateColumns = 'repeat (9, 1fr)'
+        // desk.style.gridTemplateRows = 'repeat (9, 1fr)'
+        document.body.appendChild (desk)
+
+
+    //     function createBox (text = ' ', background = 'white'){
+    //     let box = document.createElement ('div')
+    //     box.className = 'box'
+    //     box.innerHTML = '${text}'
+    //     box.style.backgroundColor = '${background}'
+    //     box.style.outline = '1px solid black'
+    //     box.style.width = '100 px'
+    //     box.style.height = '100 px'
+    //     box.style.display = 'grid'
+    //     box.style.justifyContent = 'center'
+    //     box.style.alignContent = 'center'
+    //     desk.appendChild (box)
+    //     }
+
+    //     for (let i = 0; i <= 8; i++){
+    //         if (i===0){
+    //             createBox (' ', 'white')
+    //             for (let i=65; i<=72; i++){
+    //                 createBox (String.fromCodePoint(i), 'white')
+    //             }
+    //         } else if (i%2===0){
+    //             createBox (i, 'white')
+    //             for (let i=0; i<4; i++){
+    //                 createBox ()
+    //                 createBox (' ', 'black')
+    //             }
+    //         } else {
+    //             createBox (i, 'white')
+    //             for (let i=0; i<4; i++){
+    //                 createBox (' ', 'black')
+    //                 createBox ()
+    //             }
+    //         }
+    //     }
+    // 
+    
+
+        function createWhiteBox (text = '', outline = '1px solid black'){
+            let whiteBox = document.createElement ('div')
+            whiteBox.className = 'whiteBox'
+            whiteBox.innerHTML = '${text}'
+            whiteBox.style.backgroundColor = 'white'
+            whiteBox.style.outline = '${outline}'
+            // whiteBox.style.display = 'grid'
+            whiteBox.style.margin = '0'
+            whiteBox.style.float = 'left'
+            whiteBox.style.justifyContent = 'center'
+            whiteBox.style.alignContent = 'center'
+            desk.appendChild (whiteBox)
+        }
+
+        function createBlackBox (){
+            let blackBox = document.createElement ('div')
+            blackBox.className = 'blackBox'
+            blackBox.style.backgroundColor = 'black'
+            blackBox.style.outline = '1px solid black'
+            // blackBox.style.display = 'grid'
+            blackBox.style.margin = '0'
+            blackBox.style.float = 'left'
+            blackBox.style.justifyContent = 'center'
+            blackBox.style.alignContent = 'center'
+            desk.appendChild (blackBox)
+        }
+
+        
+
+        for (let i=0; i<=9; i++){ 
+            let arrLetter = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', '']
+            if (i===0 || i===9){
+                createWhiteBox (arrLetter[i], '')
+            } else {
+                for (let j=0; j<=9; j++){
+                    let arrNum = ['', 1, 2, 3, 4, 5, 6, 7, 8, '']
+                    if (j===0 || j===9){
+                        createWhiteBox (arrNum[j], '')
+                    } else if (j%2===0){
+                        createWhiteBox ()
+                    } else {
+                        createBlackBox ()
+                        }
+                }
+            }
+        }
+    }
+    chessDesk ()
+    </script>
+</body>
+</html>
