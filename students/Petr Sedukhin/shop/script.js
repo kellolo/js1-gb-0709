@@ -114,7 +114,6 @@ function removeProductFromCart (index){
     if (finder.qty > 1){
         finder.qty --
     }else{
-        console.log(finder)
         cart.splice(cart.indexOf(finder), 1)
     }
     renderCart()

@@ -247,5 +247,35 @@ img {
 }
 
 .gallery-show{
-    margin: 200px auto;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.main-img{
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.cls-glr{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#roulette{
+    text-align: center;
+}
+
+#roulette img{
+    width: 90px;
+}
+
+.cmd-btn, .cls-glr, .products img, #roulette img{
+    cursor: pointer;
+}
+
+.cmd-btn{
+    bottom: 225px;
+    position: relative;
+    margin: 0 20px;
 }
