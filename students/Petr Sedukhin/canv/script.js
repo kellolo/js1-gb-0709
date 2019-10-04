@@ -5,6 +5,8 @@ const xCoordBlock = doc.querySelector ('#x-coord')
 const yCoordBlock = doc.querySelector ('#y-coord')
 let xCoordFinish = 0
 let yCoordFinish = 0
+let xCoordStart = 0
+let yCoordStart = 0
 
 
 const system = {
@@ -23,6 +25,19 @@ function getCoordinates (evt) {
     //берем коорд курсора
     xCoordBlock.innerText = evt.offsetX
     yCoordBlock.innerText = evt.offsetY
+    
+}
+
+function getCoordinatesStart (evt) {
+    //берем коорд курсора
+    xCoordStart = evt.offsetX
+    yCoordStart = evt.offsetY
+}
+
+function getCoordinatesFinish (evt) {
+    //берем коорд курсора
+    xCoordFinish = evt.offsetX
+    yCoordFinish = evt.offsetY
 }
 
 function clicker (evt) {
@@ -55,6 +70,9 @@ function startDraw (evt) {
             case 'fill':    
                 fill (evt);
                 break;
+            case 'rect': 
+                drowRect (evt);
+                break;
         }        
     } else {
         alert ('choose tool')
@@ -63,8 +81,6 @@ function startDraw (evt) {
 
 function endDraw (evt) {
     canvas.onmousemove = null
-    // xCoordFinish = evt.offsetX
-    // yCoordFinish = evt.offsetY
 }
 
 
@@ -86,16 +102,32 @@ function fill (evt) {
     ctx.fillRect (0, 0, system.width, system.height)
 }
 
-// function drowRect (evt) {
-//     console.log(+xCoordBlock.innerText, +yCoordBlock.innerText)
-    
-// }
+function drowRect (evt) { 
+    getCoordinatesFinish(evt)
+    ctx.fillStyle = system.currentColor
+    ctx.fillRect(xCoordStart, yCoordStart, xCoordFinish - xCoordStart, yCoordFinish - yCoordStart)
+}
+
+function checkTool(evt){   
+    if (system.currentTool == 'rect'){
+        getCoordinatesStart(evt)
+        canvas.addEventListener ('mouseup', drowRect)
+        canvas.removeEventListener ('mouseup', endDraw)
+    }else{
+        startDraw()
+        canvas.removeEventListener('mouseup', drowRect)
+        canvas.addEventListener ('mouseup', endDraw)
+    }
+}
 
 //listeners
 
 doc.addEventListener ('input', inputer)
 doc.addEventListener ('click', clicker)
-
 canvas.addEventListener ('mousemove', getCoordinates)
-canvas.addEventListener ('mousedown', startDraw)
-canvas.addEventListener ('mouseup', endDraw)
+canvas.addEventListener ('mousedown', checkTool)
+
+
+
+
+
