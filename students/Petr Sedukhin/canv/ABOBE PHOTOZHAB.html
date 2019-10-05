@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ABOBE PHOTOZHAB</title>
+	<link rel="stylesheet" href="style.css">	
+</head>
+<body>
+	<div class="content">
+		<div class="head">
+			<div class="tools">
+				<div>
+					<input id="radio-1" type="radio" name="radio" value="1">
+					<label class="tool-button" data-name='brush' for="radio-1">Brush</label>
+				</div>	
+				<div>
+					<input id="radio-2" type="radio" name="radio" value="2">
+					<label class="tool-button" data-name='eraser' for="radio-2">Eraser</label>
+				</div>	
+				<div>
+					<input id="radio-3" type="radio" name="radio" value="3">
+					<label class="tool-button" data-name='fill' for="radio-3">Fill</label>
+				</div>
+				<div>
+					<input id="radio-4" type="radio" name="radio" value="4">
+					<label class="tool-button" data-name='rect' for="radio-4">Rect</label>
+				</div>
+				<!-- <button class="tool-button" data-name='brush'>Brush</button>
+				<button class="tool-button" data-name='eraser'>Eraser</button>
+				<button class="tool-button" data-name='fill'>Fill</button> -->
+				<div class="slt-sz">
+					<input id = "select-size" type="range" min="1" max="50" step="1" value="5">
+				</div> 
+				<div class="slt-cr">
+					<input type="color" id="select-color">
+				</div>
+			</div>
+		</div>
+
+		<div class="canv">
+			<canvas id="canv" width="800" height="600"></canvas> 
+		</div>
+
+		<div class="coordinates">
+			<div class="coord">
+				<p id="x"><b>x: </b> <span id="x-coord"></span></p>
+			</div>
+			<div class="coord">
+				<p id="y"><b>y: </b> <span id="y-coord"></span></p>
+			</div>
+		</div>
+
+		
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
